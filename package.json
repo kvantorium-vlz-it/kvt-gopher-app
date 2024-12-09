@@ -12,12 +12,12 @@
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@prisma/nuxt": "^0.0.35",
-    "nuxt": "^3.13.0",
+    "nuxt": "^3.14.1592",
     "radix-vue": "^1.9.7",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@prisma/client": "^5.21.1"
+    "@prisma/client": "^6.0.1"
   }
 }
