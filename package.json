@@ -18,6 +18,7 @@
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@prisma/client": "^6.0.1"
+    "@prisma/client": "^6.0.1",
+    "prisma": "^6.0.1"
   }
 }

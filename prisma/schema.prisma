@@ -54,3 +54,38 @@ model Image {
   alt String?
   LocationDataImages LocationDataImage[]
 }
+
+model Quiz{
+  id Int @id @default(autoincrement())
+}
+
+model QuizQuestion{
+  id Int @id @default(autoincrement())
+  question_id Int
+  answer_id Int
+  answer Answer @relation(fields: [answer_id], references: [id])
+  question Question @relation(fields: [question_id], references: [id])
+}
+model Question{
+  id Int @id @default(autoincrement())
+  text String
+  QuizQuestions QuizQuestion[]
+  AnswerQuestions AnswerQuestion[]
+
+}
+model Answer{
+  id Int @id @default(autoincrement())
+  text String
+  is_true Boolean
+  AnswerQuestions AnswerQuestion[]
+  QuizQuestions QuizQuestion[]
+
+}
+
+model AnswerQuestion{
+  id Int @id @default(autoincrement())
+  answer_id Int
+  question_id Int
+  Answer Answer @relation(fields: [answer_id], references: [id])
+  Question Question @relation(fields: [question_id], references: [id])
+}
