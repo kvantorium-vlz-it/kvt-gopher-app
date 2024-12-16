@@ -57,35 +57,41 @@ model Image {
 
 model Quiz{
   id Int @id @default(autoincrement())
+  Questions Question[]
 }
 
-model QuizQuestion{
-  id Int @id @default(autoincrement())
-  question_id Int
-  answer_id Int
-  answer Answer @relation(fields: [answer_id], references: [id])
-  question Question @relation(fields: [question_id], references: [id])
-}
+// model QuizQuestion{
+//   id Int @id @default(autoincrement())
+//   question_id Int
+//   answer_id Int
+//   answer Answer @relation(fields: [answer_id], references: [id])
+//   question Question @relation(fields: [question_id], references: [id])
+// }
+
 model Question{
   id Int @id @default(autoincrement())
   text String
-  QuizQuestions QuizQuestion[]
-  AnswerQuestions AnswerQuestion[]
+  quiz_id Int
+  Quiz Quiz @relation(fields: [quiz_id], references: [id])
+ 
+  answer_id Int
+  Answer Answer @relation(fields: [answer_id], references: [id]) 
+ 
 
 }
 model Answer{
   id Int @id @default(autoincrement())
   text String
-  is_true Boolean
-  AnswerQuestions AnswerQuestion[]
-  QuizQuestions QuizQuestion[]
-
+  is_true Boolean 
+  Questions Question[]
+  // AnswerQuestions AnswerQuestion[]
+  // QuizQuestions QuizQuestion[]
 }
 
-model AnswerQuestion{
-  id Int @id @default(autoincrement())
-  answer_id Int
-  question_id Int
-  Answer Answer @relation(fields: [answer_id], references: [id])
-  Question Question @relation(fields: [question_id], references: [id])
-}
+// model AnswerQuestion{
+//   id Int @id @default(autoincrement())
+//   answer_id Int
+//   question_id Int
+//   Answer Answer @relation(fields: [answer_id], references: [id])
+//   Question Question @relation(fields: [question_id], references: [id])
+// }
