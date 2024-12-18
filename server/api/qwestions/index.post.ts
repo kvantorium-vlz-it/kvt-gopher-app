@@ -2,15 +2,17 @@ import prisma from '@/lib/prisma'
 
 interface Body {
     text: string
+    quiz_id: number 
 }
 
 
-eventHandler(async (event) =>{
-    const {text} =await readBody<Body>(event)
+export default eventHandler(async (event) =>{
+    const {text,quiz_id} =await readBody<Body>(event)
 
     const postQuestion = await prisma.question.create({
         data:{
-            text
+            text,
+            quiz_id
         }
     })
     return postQuestion

@@ -2,16 +2,18 @@ import prisma from '@/lib/prisma'
 
 interface Body {
      text: string
-}
+     quiz_id: number 
+ }
 
 export default eventHandler(async (event) => {
-     const { text } = await readBody<Body>(event)
+     const {text,quiz_id} = await readBody<Body>(event)
      const id = +getRouterParam(event, 'id')!
 
      const putQuestion = await prisma.question.update({
           where: { id },
           data: {
-               text
+               text,
+               quiz_id
           }
      })
 

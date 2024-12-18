@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma'
 
 
-eventHandler(async (event) =>{
+export default eventHandler(async (event) =>{
     const postQuiz = await prisma.quiz.create({})
     return postQuiz
 })

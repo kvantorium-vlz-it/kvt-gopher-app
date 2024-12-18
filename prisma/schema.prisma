@@ -73,17 +73,15 @@ model Question{
   text String
   quiz_id Int
   Quiz Quiz @relation(fields: [quiz_id], references: [id])
- 
-  answer_id Int
-  Answer Answer @relation(fields: [answer_id], references: [id]) 
- 
+  Answers Answer[]
 
 }
 model Answer{
   id Int @id @default(autoincrement())
   text String
   is_true Boolean 
-  Questions Question[]
+  question_id Int
+  Question Question @relation(fields: [question_id], references: [id]) 
   // AnswerQuestions AnswerQuestion[]
   // QuizQuestions QuizQuestion[]
 }
