@@ -1,4 +1,5 @@
 import prisma from '@/lib/prisma'
+import { Text } from 'vue'
 
 
 
@@ -22,7 +23,7 @@ export default eventHandler(async (event) =>{
 //         }
 //     })
 
-return  await prisma.quiz.findUnique({
+const utils = await prisma.quiz.findUnique({
         where: {
             id,
         },
@@ -35,7 +36,12 @@ return  await prisma.quiz.findUnique({
             }
         }
     })
+    
 
+
+    // const _ = {...utils,Questions: utils?.Questions.map((v) => v.Answers.filter((vv) => vv.is_true))}
+
+    return utils
 //     const getQuestion = await prisma.question.findMany({
 //         where:{  quiz_id:id  },
 //         include:{
