@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_map_progresses",
+  "info": {
+    "singularName": "user-map-progress",
+    "pluralName": "user-map-progresses",
+    "displayName": "User Map Progress"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location.location",
+      "inversedBy": "user_map_progresses"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_map_progresses"
+    },
+    "visited_locations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::location.location",
+      "inversedBy": "user_map_progresses"
+    },
+    "last_location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location",
+      "inversedBy": "user_map_progress"
+    },
+    "finished": {
+      "type": "boolean"
+    }
+  }
+}
