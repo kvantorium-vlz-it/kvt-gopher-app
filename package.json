@@ -1,23 +1,12 @@
 {
-  "name": "nuxt-app",
+  "name": "with-vue-nuxt",
   "private": true,
-  "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "@prisma/nuxt": "^0.0.35",
-    "nuxt": "^3.14.1592",
-    "radix-vue": "^1.9.7",
-    "vue": "latest",
-    "vue-router": "latest"
+    "build": "turbo run build",
+    "dev": "turbo run dev"
   },
   "devDependencies": {
-    "@prisma/client": "^6.0.1"
-  }
+    "turbo": "^2.5.0"
+  },
+  "packageManager": "pnpm@8.15.6"
 }

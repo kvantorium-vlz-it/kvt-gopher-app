@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "location"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "lon": {
+      "type": "decimal"
+    },
+    "lat": {
+      "type": "decimal"
+    },
+    "name": {
+      "type": "string"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "text": {
+      "type": "blocks"
+    },
+    "user_map_progresses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::user-map-progress.user-map-progress",
+      "mappedBy": "visited_locations"
+    },
+    "user_map_progress": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::user-map-progress.user-map-progress",
+      "mappedBy": "last_location"
+    },
+    "game": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::game.game",
+      "mappedBy": "location"
+    }
+  }
+}
