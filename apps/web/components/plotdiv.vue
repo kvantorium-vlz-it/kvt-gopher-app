@@ -2,17 +2,17 @@
 </script>
 <template>
     <div>
-        <div class="historyblock">
-            <div class="history">
+        <div class="plotblock">
+            <div class="plot">
             </div>
         </div>
     </div>
 </template>
 <style scoped>
-.historyblock{
+.plotblock{
     margin: 20px;
 }
-.history{
+.plot{
     display: block;
     width: 296px;
     height: 256px;
