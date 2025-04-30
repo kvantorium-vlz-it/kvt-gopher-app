@@ -37,9 +37,7 @@
                 Выбор сюжета
             </template>
     
-            <div style="aspect-ratio: 1; border: 1px solid black;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id a ratione magnam, eos impedit tempora amet nulla incidunt asperiores.
-            </div>
+            <StorySwiper />
         </Section>
     </div>
 </template>
