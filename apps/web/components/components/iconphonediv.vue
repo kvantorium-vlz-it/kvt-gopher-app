@@ -2,17 +2,14 @@
 </script>
 <template>
     <div>
-        <div class="excursion">
+        <div class="phone">
         </div>
     </div>
 </template>
 <style scoped>
-.excursion{
+.phone{
     display: block;
-    width: 400px;
-    height: 155px;
-    border: 2px solid black;
     border-radius: 16px;
-    margin: 20px;
+    background-color: #D9D9D9;
 }
 </style>

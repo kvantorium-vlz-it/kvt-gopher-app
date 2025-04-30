@@ -2,17 +2,15 @@
 </script>
 <template>
     <div>
-        <div class="rating">
+        <div class="plot">
         </div>
     </div>
 </template>
 <style scoped>
-.rating{
+
+.plot{
     display: block;
-    width: 88px;
-    height: 69px;
+    border: 2px solid black;
     border-radius: 16px;
-    margin: 20px;
-    background-color: #D9D9D9;
 }
 </style>

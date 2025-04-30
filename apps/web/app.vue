@@ -12,14 +12,5 @@ import Iconshoptext from './components/iconshoptext.vue';
 
 <template>
   <div>
-    <!-- <iconshopdiv></iconshopdiv>
-    <iconshop></iconshop>
-    <iconshoptext></iconshoptext>
-    <iconrating></iconrating>
-    <iconratingtext></iconratingtext>
-    <iconratingdiv></iconratingdiv>
-    <iconphone></iconphone>
-    <iconphonediv></iconphonediv>
-    <iconphonetext></iconphonetext> -->
   </div>
 </template>

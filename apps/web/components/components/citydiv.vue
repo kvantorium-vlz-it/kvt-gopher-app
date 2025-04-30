@@ -2,21 +2,15 @@
 </script>
 <template>
     <div>
-        <div class="plotblock">
-            <div class="plot">
-            </div>
+        <div class="city">
         </div>
     </div>
 </template>
 <style scoped>
-.plotblock{
-    margin: 20px;
-}
-.plot{
+.city{
     display: block;
-    width: 296px;
-    height: 256px;
     border: 2px solid black;
     border-radius: 16px;
+    background-color:#A5C8F0;
 }
 </style>

@@ -2,16 +2,16 @@
 </script>
 <template>
     <div>
-            <div class="plottext">Истории</div>
+            <p class="profiletext">0 exp</p>
     </div>
 </template>
 <style scoped>
 
-.plottext{
-    width: 283px;
-    height: 48px;
+.profiletext{
     font-family: Gothic №60;
-    font-size: 32px;
+    font-size: 10px;
     line-height: 100%;
+    color: #00000080;
+    opacity: 50%;
 }
 </style>

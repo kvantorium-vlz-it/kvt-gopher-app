@@ -2,17 +2,14 @@
 </script>
 <template>
     <div>
-        <div class="phone">
+        <div class="rating">
         </div>
     </div>
 </template>
 <style scoped>
-.phone{
+.rating{
     display: block;
-    width: 88px;
-    height: 69px;
     border-radius: 16px;
-    margin: 20px;
     background-color: #D9D9D9;
 }
 </style>

@@ -4,7 +4,7 @@
     <div>
         <div class="notificationback">
             <div class="notification">
-                3
+                67%
             </div>
         </div>
     </div>
@@ -12,22 +12,15 @@
 <style scoped>
 .notificationback{
     display: flex;
-    border-radius: 16px;
-    width: 44px;
-    height: 44px;
-    margin: 16px;
-    background-color: #477DFF;
-    position: relative;
-    
-
+    border-radius: 6px;
+    background-color: #FFFFFF;
 }
 .notification{
     display: block;
     font-family: Gothic №60;
-    font-size: 20px;
-    color: white;
+    font-size: 12px;
+    color: #00000080;
     line-height: 100%;
-    padding-left: 16px;
-    padding-top: 12px;
+    opacity: 50%;
 }
 </style>

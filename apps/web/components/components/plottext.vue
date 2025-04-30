@@ -1,16 +1,15 @@
 <script setup lang="ts">
 </script>
 <template>
-            <h1 class="plotname">Истории</h1>
+    <div>
+            <p class="plottext">Истории</p>
+    </div>
 </template>
 <style scoped>
 
-.plotname{
+.plottext{
     font-family: Gothic №60;
     font-size: 32px;
     line-height: 100%;
-    width: 180px;
-    height: 24px;
-    font-weight: 400;
 }
 </style>

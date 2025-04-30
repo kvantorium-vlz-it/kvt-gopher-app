@@ -2,17 +2,15 @@
 </script>
 <template>
     <div>
-        <div class="shop">
+        <div class="profile">
         </div>
     </div>
 </template>
 <style scoped>
-.shop{
+
+.profile{
     display: block;
-    width: 192px;
-    height: 69px;
     border-radius: 16px;
-    margin: 20px;
-    background-color: #D9D9D9;
+    background-color: #F2F2F2;
 }
 </style>
