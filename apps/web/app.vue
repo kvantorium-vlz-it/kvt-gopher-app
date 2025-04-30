@@ -1,5 +1,3 @@
 <template>
-  <div>
-    Lorem, ipsum.
-  </div>
+  <NuxtPage />
 </template>
