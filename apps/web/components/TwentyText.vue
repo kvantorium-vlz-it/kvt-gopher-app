@@ -11,6 +11,5 @@
 .text{
     font-family: Gothic №60;
     font-size: 20px;
-    color: #FFFFFF;
 }
 </style>

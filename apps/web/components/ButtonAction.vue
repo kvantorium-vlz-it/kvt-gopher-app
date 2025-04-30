@@ -2,7 +2,7 @@
 </script>
 <template>
     <button class="button">
-        <TwentyText>вперёд!</TwentyText>
+        <TwentyText class="button-action-text">вперёд!</TwentyText>
     </button>
 </template>
 <style scoped>
@@ -15,6 +15,10 @@
     justify-content: center;
     border:none ;
     text-decoration: none;
+}
+
+.button-action-text{
+    color: #FFFFFF;
 }
 
 </style>

@@ -3,7 +3,13 @@
 </script>
 
 <template>
-  <div>
+  <div class="kak-xochesh">
     
+    <CityArea />
   </div>
 </template>
+<style scoped>
+.kak-xochesh{
+  padding: 0px 20px;
+}
+</style>

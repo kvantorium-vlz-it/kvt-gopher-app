@@ -2,6 +2,7 @@
 </script>
 <template>
     <div class="block">
+        <slot></slot>
     </div>
 </template>
 <style scoped>
