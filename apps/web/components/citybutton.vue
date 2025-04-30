@@ -3,7 +3,7 @@
 <template>
      <div>
         <button class="citybutton">
-                ОТКРЫТЬ ГОРОД
+            вперёд!
         </button>
     </div>
 </template>
@@ -11,11 +11,8 @@
 
 .citybutton{
     display: block;
-    width: 368px;
-    height: 44px;
-    margin: 16px;
     border-radius: 16px;
-    background-color: #477DFF;
+    background-color: #3C69FF;
     font-family: Gothic №60;
     font-size: 20px;
     line-height: 100%;
@@ -25,7 +22,7 @@
     border:none ;
 }
 .citybutton:hover{
-    background-color: #2B4B99;
+    background-color: #3C69FF;
     text-decoration: none;
 }
 </style>

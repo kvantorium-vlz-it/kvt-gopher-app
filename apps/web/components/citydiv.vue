@@ -9,10 +9,8 @@
 <style scoped>
 .city{
     display: block;
-    width: 400px;
-    height: 155px;
     border: 2px solid black;
     border-radius: 16px;
-    margin: 20px;
+    background-color:#A5C8F0;
 }
 </style>

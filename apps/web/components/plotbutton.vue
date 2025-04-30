@@ -1,30 +1,28 @@
 <script setup lang="ts">
 </script>
 <template>
-    <div>
-        <button class="excursionbutton">
-                ОТКРЫТЬ ГОРОД
+     <div>
+        <button class="plotbutton">
+            вперёд!
         </button>
     </div>
 </template>
 <style scoped>
-.excursionbutton{
+
+.plotbutton{
     display: block;
-    width: 368px;
-    height: 44px;
-    margin: 16px;
     border-radius: 16px;
-    background-color: #477DFF;
+    background-color: #3C69FF;
     font-family: Gothic №60;
     font-size: 20px;
     line-height: 100%;
     vertical-align: bottom;
     letter-spacing: 0px;
-    color: white;
+    color: #ffffff;
     border:none ;
 }
-.excursionbutton:hover{
-    background-color: #2B4B99;
+.plotbutton:hover{
+    background-color: #3C69FF;
     text-decoration: none;
 }
 </style>

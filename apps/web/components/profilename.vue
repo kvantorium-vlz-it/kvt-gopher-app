@@ -2,12 +2,12 @@
 </script>
 <template>
     <div>
-            <p class="plottext">Истории</p>
+            <p class="profilename">Семен</p>
     </div>
 </template>
 <style scoped>
 
-.plottext{
+.profilename{
     font-family: Gothic №60;
     font-size: 32px;
     line-height: 100%;

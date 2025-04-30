@@ -1,7 +1,7 @@
 <script setup lang="ts">
 </script>
 <template>
-            <h1 class="plotname">Истории</h1>
+            <h1 class="plotname">выбор сюжета</h1>
 </template>
 <style scoped>
 
@@ -9,8 +9,6 @@
     font-family: Gothic №60;
     font-size: 32px;
     line-height: 100%;
-    width: 180px;
-    height: 24px;
     font-weight: 400;
 }
 </style>

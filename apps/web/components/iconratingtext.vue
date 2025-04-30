@@ -7,7 +7,7 @@
 </template>
 <style scoped>
 .rating{
-    display: ;
+    display: flex;
     font-family: Gothic №60;
     line-height: 100%;
     font-size: 12px;
