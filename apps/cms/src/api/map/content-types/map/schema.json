@@ -4,7 +4,8 @@
   "info": {
     "singularName": "map",
     "pluralName": "maps",
-    "displayName": "map"
+    "displayName": "map",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,16 +14,6 @@
     "name": {
       "type": "string"
     },
-    "images": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
     "description": {
       "type": "richtext"
     },
@@ -30,6 +21,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::location.location"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

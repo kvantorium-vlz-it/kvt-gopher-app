@@ -4,7 +4,8 @@
   "info": {
     "singularName": "location",
     "pluralName": "locations",
-    "displayName": "location"
+    "displayName": "location",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,16 +21,17 @@
       "type": "string"
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
-    "text": {
+    "description": {
       "type": "blocks"
     },
     "user_map_progresses": {
@@ -48,6 +50,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::game.game",
+      "mappedBy": "location"
+    },
+    "finish": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::finish.finish",
       "mappedBy": "location"
     }
   }
