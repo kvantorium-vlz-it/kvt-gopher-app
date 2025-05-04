@@ -369,12 +369,12 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiFinishFinish extends Struct.CollectionTypeSchema {
-  collectionName: 'finished';
+export interface ApiCityCity extends Struct.CollectionTypeSchema {
+  collectionName: 'cities';
   info: {
-    displayName: 'finish';
-    pluralName: 'finished';
-    singularName: 'finish';
+    displayName: 'City';
+    pluralName: 'cities';
+    singularName: 'city';
   };
   options: {
     draftAndPublish: true;
@@ -384,20 +384,14 @@ export interface ApiFinishFinish extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::finish.finish'
-    > &
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::city.city'> &
       Schema.Attribute.Private;
-    location: Schema.Attribute.Relation<'oneToOne', 'api::location.location'>;
+    maps: Schema.Attribute.Relation<'oneToMany', 'api::map.map'>;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    users_permissions_user: Schema.Attribute.Relation<
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
   };
 }
 
@@ -447,7 +441,6 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Blocks;
-    finish: Schema.Attribute.Relation<'oneToOne', 'api::finish.finish'>;
     game: Schema.Attribute.Relation<'oneToOne', 'api::game.game'>;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
@@ -461,6 +454,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     lon: Schema.Attribute.Decimal;
+    map: Schema.Attribute.Relation<'manyToOne', 'api::map.map'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -469,14 +463,6 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     user_location_progresses: Schema.Attribute.Relation<
       'oneToMany',
       'api::user-location-progress.user-location-progress'
-    >;
-    user_map_progress: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::user-map-progress.user-map-progress'
-    >;
-    user_map_progresses: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::user-map-progress.user-map-progress'
     >;
   };
 }
@@ -628,48 +614,6 @@ export interface ApiUserLocationProgressUserLocationProgress
     users_permissions_user: Schema.Attribute.Relation<
       'manyToOne',
       'plugin::users-permissions.user'
-    >;
-  };
-}
-
-export interface ApiUserMapProgressUserMapProgress
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'user_map_progresses';
-  info: {
-    displayName: 'User Map Progress';
-    pluralName: 'user-map-progresses';
-    singularName: 'user-map-progress';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    finished: Schema.Attribute.Boolean;
-    last_location: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::location.location'
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::user-map-progress.user-map-progress'
-    > &
-      Schema.Attribute.Private;
-    location: Schema.Attribute.Relation<'manyToOne', 'api::location.location'>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    users_permissions_user: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    visited_locations: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::location.location'
     >;
   };
 }
@@ -1143,7 +1087,6 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    finish: Schema.Attribute.Relation<'oneToOne', 'api::finish.finish'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1169,10 +1112,6 @@ export interface PluginUsersPermissionsUser
       'oneToMany',
       'api::user-location-progress.user-location-progress'
     >;
-    user_map_progresses: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::user-map-progress.user-map-progress'
-    >;
     username: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
@@ -1192,7 +1131,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::finish.finish': ApiFinishFinish;
+      'api::city.city': ApiCityCity;
       'api::game.game': ApiGameGame;
       'api::location.location': ApiLocationLocation;
       'api::map.map': ApiMapMap;
@@ -1200,7 +1139,6 @@ declare module '@strapi/strapi' {
       'api::speaker.speaker': ApiSpeakerSpeaker;
       'api::story.story': ApiStoryStory;
       'api::user-location-progress.user-location-progress': ApiUserLocationProgressUserLocationProgress;
-      'api::user-map-progress.user-map-progress': ApiUserMapProgressUserMapProgress;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
