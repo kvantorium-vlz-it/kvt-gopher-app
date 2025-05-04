@@ -466,6 +466,10 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user_location_progresses: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-location-progress.user-location-progress'
+    >;
     user_map_progress: Schema.Attribute.Relation<
       'oneToOne',
       'api::user-map-progress.user-map-progress'
@@ -592,6 +596,39 @@ export interface ApiStoryStory extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUserLocationProgressUserLocationProgress
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'user_location_progresses';
+  info: {
+    displayName: 'User Location Progress';
+    pluralName: 'user-location-progresses';
+    singularName: 'user-location-progress';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-location-progress.user-location-progress'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.Relation<'manyToOne', 'api::location.location'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -1128,6 +1165,10 @@ export interface PluginUsersPermissionsUser
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    user_location_progresses: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-location-progress.user-location-progress'
+    >;
     user_map_progresses: Schema.Attribute.Relation<
       'oneToMany',
       'api::user-map-progress.user-map-progress'
@@ -1158,6 +1199,7 @@ declare module '@strapi/strapi' {
       'api::message.message': ApiMessageMessage;
       'api::speaker.speaker': ApiSpeakerSpeaker;
       'api::story.story': ApiStoryStory;
+      'api::user-location-progress.user-location-progress': ApiUserLocationProgressUserLocationProgress;
       'api::user-map-progress.user-map-progress': ApiUserMapProgressUserMapProgress;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

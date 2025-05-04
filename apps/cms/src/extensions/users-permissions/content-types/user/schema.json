@@ -76,6 +76,12 @@
       "relation": "oneToOne",
       "target": "api::finish.finish",
       "mappedBy": "users_permissions_user"
+    },
+    "user_location_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-location-progress.user-location-progress",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

@@ -1,3 +1,11 @@
+# для работы в apps/cms создай .env скопируй туда данный из .env.example
+# pnpm i
+# pnpm run dev
+
+
+
+
+
 # Turborepo VueJS/NuxtJS starter
 
 This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
