@@ -9,7 +9,7 @@
 
 .button{
     padding: 7px 44px;
-    border-radius: 16px;
+    border-radius: 6px;
     background-color: #3C69FF;
     display: inline-flex;
     justify-content: center;
