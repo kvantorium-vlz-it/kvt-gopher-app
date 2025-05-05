@@ -6,13 +6,18 @@
   <div class="body">
     <TheHeader></TheHeader>
     <div class="kak-xochesh">
+      <Menu></Menu>
       <CityArea />
+      <Plots></Plots>
     </div>
   </div>
   
 </template>
 <style scoped>
 .kak-xochesh{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding: 0px 20px;
 }
 .body{
