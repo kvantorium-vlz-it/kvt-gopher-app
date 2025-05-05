@@ -17,6 +17,8 @@
     "vue-router": "^4.3.0"
   },
   "dependencies": {
+    "@nuxt/icon": "^1.12.0",
+    "radix-vue": "^1.9.17",
     "nuxt-swiper": "^2.0.0",
     "@nuxtjs/strapi": "^2.0.0",
     "@yandex/ymaps3-types": "^1.0.16452936",
