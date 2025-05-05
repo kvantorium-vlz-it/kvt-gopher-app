@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "finished",
+  "info": {
+    "singularName": "finish",
+    "pluralName": "finished",
+    "displayName": "finish"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location",
+      "inversedBy": "finish"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "finish"
+    }
+  }
+}

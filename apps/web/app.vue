@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <NuxtPage />
   <div class="body">
     <TheHeader></TheHeader>
     <div class="kak-xochesh">
@@ -26,3 +27,8 @@
   gap: 16px;
 }
 </style>
+
+
+
+
+
