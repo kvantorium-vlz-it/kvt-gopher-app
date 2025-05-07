@@ -4,14 +4,19 @@
 
 <template>
   <NuxtPage />
-  <!-- <div class="body">
+
+  <div class="body">
+
     <TheHeader></TheHeader>
     <div class="kak-xochesh">
       <Menu></Menu>
       <CityArea />
       <Plots></Plots>
     </div>
-  </div> -->
+
+   
+    <CitySelect />
+  </div>
 
   
 </template>
