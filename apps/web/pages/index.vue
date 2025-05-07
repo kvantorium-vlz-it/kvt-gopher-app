@@ -2,24 +2,24 @@
     <div>
         <HomeHeader>
             <template #left>
-                <div style="border: 1px solid black; background: red;">
-                    Lorem, ipsum.
+                <div>
+                    <MenuButton />
                 </div>
+
             </template>
-    
-            <template #right>
-                <div style="background: green; height: 100px;">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, et!
-                </div>
-            </template>
-    
             <template #middle>
-                <img
-                    style="display: block; width: 100%;"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ718nztPNJfCbDJjZG8fOkejBnBAeQw5eAUA&s"
-                    alt=""
-                >
+                <div>
+                    <MenuButton />
+                </div>
             </template>
+            <template #right>
+                <div>
+                    <MenuButton />
+
+                </div>
+            </template>
+    
+
         </HomeHeader>
     
         <Section class="city-section">

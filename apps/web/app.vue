@@ -4,6 +4,7 @@
 
 <template>
   <NuxtPage />
+
   <div class="body">
     <TheHeader></TheHeader>
     <div class="kak-xochesh">
@@ -11,6 +12,8 @@
       <CityArea />
       <Plots></Plots>
     </div>
+    
+    <CitySelect />
   </div>
   
 </template>
