@@ -1,9 +1,9 @@
 <script setup lang="ts">
 
-const { fetchUser } = useStrapiAuth()
-const user = await fetchUser()
-const { find, findOne } = useStrapi()
-const maps = await find('maps')
+// const { fetchUser } = useStrapiAuth()
+// const user = await fetchUser()
+// const { find, findOne } = useStrapi()
+// const maps = await find('maps')
 
 </script>
 
@@ -50,6 +50,7 @@ const maps = await find('maps')
             
             <CardSwiper></CardSwiper>
         </Section>
+
       </div>
     </div>
 </template>
@@ -59,6 +60,7 @@ const maps = await find('maps')
     gap: 16px;
     display: flex;
     flex-direction: column;
+    font-size: 20px;
 }
 
 .display{
