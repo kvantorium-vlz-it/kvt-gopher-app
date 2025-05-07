@@ -1,3 +1,12 @@
+<script setup lang="ts">
+const { fetchUser } = useStrapiAuth()
+const user = await fetchUser()
+const { find, findOne } = useStrapi()
+const maps = await find('maps')
+
+</script>
+
+
 <template>
     <div>
         <HomeHeader>

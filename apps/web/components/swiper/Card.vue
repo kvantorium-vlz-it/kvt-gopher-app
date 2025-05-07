@@ -1,11 +1,17 @@
 <template>
-  <div class="card">
+  <div class="card" @click="">
     <h2 class="card-title">Card Title</h2>
     <p class="card-content">Card content goes here</p>
   </div>
 </template>
 
 <script setup lang="ts">
+defineProps<{
+  id?: string
+  title?: string
+  discription?: string
+  image?: string  
+}>()
 </script>
 
 <style scoped>
@@ -19,6 +25,7 @@
   flex-direction: column;
   gap: 10px;
   transition: transform 0.3s ease;
+  
 }
 
 .card:hover {
