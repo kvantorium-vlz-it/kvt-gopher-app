@@ -7,37 +7,37 @@
     id: string
   }>()
   
-  const { find, findOne } = useStrapi()
-  const { fetchUser } = useStrapiAuth()
+  // const { find, findOne } = useStrapi()
+  // const { fetchUser } = useStrapiAuth()
   
 
-  // Загружаем данные
-  const  city  = await findOne('cities', props.id,{populate: { maps: { populate: ['locations'] }}})
+  // // Загружаем данные
+  // const  city  = await findOne('cities', props.id,{populate: { maps: { populate: ['locations'] }}})
 
-  // Создаем реактивный объект для хранения прогресса
-  const progressValues = ref<Record<string, number>>({})
+  // // Создаем реактивный объект для хранения прогресса
+  // const progressValues = ref<Record<string, number>>({})
 
-  // Вычисляем прогресс для всех карт сразу
-  onMounted(async () => {
-    const user = await fetchUser()
-    const userId = user.value?.documentId
+  // // Вычисляем прогресс для всех карт сразу
+  // onMounted(async () => {
+  //   const user = await fetchUser()
+  //   const userId = user.value?.documentId
 
-    for (const map of city.data.maps) {
-      const mapData = await findOne('maps', map.documentId, { populate: 'locations' })
-      const progresses = await find('user-location-progresses', {
-        filters: {
-          users_permissions_user: { documentId: userId },
-          location: { map: { documentId: map.documentId } }
-        }
-      })
+  //   for (const map of city.data.maps) {
+  //     const mapData = await findOne('maps', map.documentId, { populate: 'locations' })
+  //     const progresses = await find('user-location-progresses', {
+  //       filters: {
+  //         users_permissions_user: { documentId: userId },
+  //         location: { map: { documentId: map.documentId } }
+  //       }
+  //     })
       
-      // Сохраняем результат
-      progressValues.value[map.id] = Math.round(
-        (progresses.data.length / mapData.data.locations.length) * 100
-      )
-    }
+  //     // Сохраняем результат
+  //     progressValues.value[map.id] = Math.round(
+  //       (progresses.data.length / mapData.data.locations.length) * 100
+  //     )
+  //   }
     
-  })
+  // })
 
 
   </script>

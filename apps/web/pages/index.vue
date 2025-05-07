@@ -51,8 +51,6 @@
             <CardSwiper></CardSwiper>
         </Section>
 
-        <CitySelect/>
-
       </div>
     </div>
 </template>
@@ -62,6 +60,7 @@
     gap: 16px;
     display: flex;
     flex-direction: column;
+    font-size: 20px;
 }
 
 .display{
