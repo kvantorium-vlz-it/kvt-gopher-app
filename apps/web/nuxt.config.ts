@@ -1,11 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ['~/assets/index.css'],
   modules: [
     'vue-yandex-maps/nuxt',
     '@nuxtjs/strapi',
-    "nuxt-swiper",
+    'nuxt-swiper',
     '@nuxt/icon'
   ],
   yandexMaps: {

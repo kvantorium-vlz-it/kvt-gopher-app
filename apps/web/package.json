@@ -19,7 +19,8 @@
   "dependencies": {
     "@nuxt/icon": "^1.12.0",
     "radix-vue": "^1.9.17",
-    "nuxt-swiper": "^2.0.0",
+    "swiper": "^11.0.7",
+    "nuxt-swiper": "^1.2.2",
     "@nuxtjs/strapi": "^2.0.0",
     "@yandex/ymaps3-types": "^1.0.16452936",
     "geolib": "^3.3.4",
