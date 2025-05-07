@@ -66,7 +66,7 @@ const options = [
   </ComboboxRoot>
 </template>
 
-<style>
+<style scoped>
 
 button, input {
   all: unset;

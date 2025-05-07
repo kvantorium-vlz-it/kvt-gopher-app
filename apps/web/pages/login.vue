@@ -13,7 +13,7 @@ const handleGoogleLogin = () => {
     Войти через Google
   </button>
   <div class="app">
-    <swiperCardSwiper />
+    <CardSwiper />
   </div>
 </template>
 

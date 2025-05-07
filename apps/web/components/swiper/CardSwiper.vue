@@ -14,7 +14,7 @@
     }"
   >
     <swiper-slide v-for="item in 5" :key="item">
-      <swiperCard />
+      <Card />
     </swiper-slide>
   </swiper>
 </template>
@@ -24,5 +24,4 @@ import { EffectCoverflow } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 
-const SwiperEffectCoverflow = EffectCoverflow
 </script>
