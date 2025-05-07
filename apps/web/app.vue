@@ -4,7 +4,7 @@
 
 <template>
   <NuxtPage />
-  <div class="body">
+  <!-- <div class="body">
     <TheHeader></TheHeader>
     <div class="kak-xochesh">
       <Menu></Menu>
@@ -12,7 +12,7 @@
       <Plots></Plots>
     </div>
     <CitySelect />
-  </div>
+  </div> -->
 
   
 </template>
