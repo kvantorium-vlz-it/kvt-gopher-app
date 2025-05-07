@@ -1,9 +1,14 @@
 <script setup lang="ts">
+defineProps<{
+    title: string,
+}>()
 </script>
 <template>
     <button class="button">
-        <Icon name="material-symbols:phone-android" class="menu-button-icon"/>
-        <TwelveText class="menu-button-text">телефон</TwelveText>
+        <span class="menu-button-icon">
+            <slot name="icon"></slot>
+        </span>
+        <TwelveText class="menu-button-text">{{ title }}</TwelveText>
     </button>
 </template>
 <style scoped>
@@ -17,6 +22,7 @@
     align-items: center;
     gap: 8px;
     border:none;
+    width: 100%;
 }
 
 .menu-button-icon{

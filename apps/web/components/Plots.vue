@@ -3,7 +3,6 @@
 </script>
 <template>
     <div class="city-area">
-        <TwentyText>выбор сюжета</TwentyText>
         <Block class="plot-area-card">
             <div class="plot-call-area">
                 <div class="plot-name-area">

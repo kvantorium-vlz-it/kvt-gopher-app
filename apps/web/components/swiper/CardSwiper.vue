@@ -13,8 +13,8 @@
       slideShadows: false,
     }"
   >
-    <swiper-slide v-for="item in 5" :key="item">
-      <Card />
+    <swiper-slide v-for="item in 10" :key="item">
+      <Plots />
     </swiper-slide>
   </swiper>
 </template>

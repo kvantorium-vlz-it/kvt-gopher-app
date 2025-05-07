@@ -1,50 +1,66 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-    <div>
-        <HomeHeader>
-            <template #left>
-                <div>
-                    <MenuButton />
-                </div>
+    <div class="main">
+        <TheHeader/>
+        <div class="display">
+            <HomeHeader>
+                <template #left>
 
-            </template>
-            <template #middle>
-                <div>
-                    <MenuButton />
-                </div>
-            </template>
+                    <MenuButton title="Телефон">
+                        <template #icon>
+                            <Icon name="material-symbols:phone-android"/>
+                        </template>
+                    </MenuButton>
+
+                </template>
+                <template #middle>
+                        <MenuButton title="магазин">
+                        <template #icon>
+                            <Icon name="tdesign:shop"/>
+                        </template>
+                    </MenuButton>
+                </template>
             <template #right>
-                <div>
-                    <MenuButton />
-
-                </div>
+                    <MenuButton title="рейтинг">
+                    <template #icon>
+                            <Icon name="solar:cup-outline"/>
+                        </template>
+                    </MenuButton>
             </template>
-    
-
+            
+            
         </HomeHeader>
-    
+        
         <Section class="city-section">
-            <template #heading>
-                Город
-            </template>
-    
-            <div style="aspect-ratio: 16 / 9; border: 1px solid black;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id a ratione magnam, eos impedit tempora amet nulla incidunt asperiores.
-            </div>
+            город
+            <CityArea/>
         </Section>
-    
+        
         <Section class="story-section">
-            <template #heading>
-                Выбор сюжета
-            </template>
-    
-            <StorySwiper />
+            выбор сюжета
+            
+            <CardSwiper></CardSwiper>
         </Section>
+      </div>
     </div>
 </template>
   
 <style scoped>
-.city-section {
-    margin-block: 16px;
+.main {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
 }
+
+.display{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0px 20px;
+}
+
 </style>
   
