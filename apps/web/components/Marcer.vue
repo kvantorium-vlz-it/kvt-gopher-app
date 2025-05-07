@@ -1,4 +1,5 @@
 <script setup lang="ts">
+    import { getDistance } from 'geolib';
   
 import type { YMapDefaultMarker } from '@yandex/ymaps3-types/packages/markers';
   
@@ -7,15 +8,23 @@ import type { YMapDefaultMarker } from '@yandex/ymaps3-types/packages/markers';
   const defaultMarker = shallowRef<YMapDefaultMarker | null>(null);
 
 const props = defineProps<{
+  id: string
 coords: {
   lon: number
   lat: number
  
-},
+}, mi: {
+    lon: number
+    lat: number
+  }
 }>()
 
 const emit = defineEmits(['select'])
-
+function is_range( def_range:number) { 
+      const range = getDistance({lon: props.coords.lon,lat: props.coords.lat}, {lon: props.mi.lon, lat: props.mi.lat})
+    
+      return range<= def_range ? true : false
+    }
 </script>
 
 <template >
@@ -34,7 +43,8 @@ v-model="defaultMarker"
   <div  class="popup" @click="close">
     <p><strong>Долгота:</strong> {{ props.coords.lat }}</p>
     <p><strong>Широта:</strong> {{ props.coords.lon }}</p>
-    <button @click.stop="emit('select', defaultMarker?.coordinates )">Координаты</button>
+
+    <button v-if="is_range(500)" @click.stop="emit('select', id )">Координаты</button>
   </div>
 </template>
 </yandex-map-default-marker>

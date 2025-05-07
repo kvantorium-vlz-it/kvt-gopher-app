@@ -34,29 +34,23 @@
     "description": {
       "type": "blocks"
     },
-    "user_map_progresses": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::user-map-progress.user-map-progress",
-      "mappedBy": "visited_locations"
-    },
-    "user_map_progress": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::user-map-progress.user-map-progress",
-      "mappedBy": "last_location"
-    },
     "game": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::game.game",
       "mappedBy": "location"
     },
-    "finish": {
+    "user_location_progresses": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::finish.finish",
+      "relation": "oneToMany",
+      "target": "api::user-location-progress.user-location-progress",
       "mappedBy": "location"
+    },
+    "map": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::map.map",
+      "inversedBy": "locations"
     }
   }
 }

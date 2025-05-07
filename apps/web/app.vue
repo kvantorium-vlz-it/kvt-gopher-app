@@ -6,18 +6,28 @@
   <NuxtPage />
 
   <div class="body">
+
     <TheHeader></TheHeader>
     <div class="kak-xochesh">
       <Menu></Menu>
       <CityArea />
       <Plots></Plots>
     </div>
-    
+
+   
     <CitySelect />
   </div>
+
   
 </template>
 <style scoped>
+.app {
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
 .kak-xochesh{
   display: flex;
   flex-direction: column;

@@ -65,16 +65,10 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "user_map_progresses": {
+    "user_location_progresses": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::user-map-progress.user-map-progress",
-      "mappedBy": "users_permissions_user"
-    },
-    "finish": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::finish.finish",
+      "target": "api::user-location-progress.user-location-progress",
       "mappedBy": "users_permissions_user"
     }
   }
