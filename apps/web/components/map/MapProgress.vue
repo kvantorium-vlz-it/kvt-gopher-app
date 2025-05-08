@@ -3,10 +3,14 @@ import { onMounted, ref } from 'vue'
 import { ProgressIndicator, ProgressRoot } from 'radix-vue'
 
 const progressValue = ref(0)
-
+const props = defineProps<{
+    progress: number,
+    
+  
+  }>()
 
 onMounted(() => {
-  const timer = setTimeout(() => (progressValue.value = 66), 500)
+  const timer = setTimeout(() => (progressValue.value = props.progress), 500)
   return () => clearTimeout(timer)
 })
 </script>

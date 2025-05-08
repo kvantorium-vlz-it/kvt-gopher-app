@@ -8,6 +8,21 @@
     response.value = await findOne('maps',MapId,{
         populate:['locations']
     })
+    const user = await fetchUser()
+    const userId = user.value?.documentId
+
+    const mapData = await findOne('maps', MapId, { populate: 'locations' })
+      const progresses = await find('user-location-progresses', {
+        filters: {
+          users_permissions_user: { documentId: userId },
+          location: { map: { documentId: MapId } }
+        }
+      })
+
+      const compled = progresses.data.length
+      const all = mapData.data.locations.length
+      const progress = (compled / all)*100
+      
 </script>
 
 <template>
@@ -15,11 +30,11 @@
       <header class="header">
         <div class="header-content">
           <div class="stats-container">
-            <MapStat text="sadds" number="12"/>
-            <MapStat text="sadds" number="12"/>
+            <MapStat text="собрано" :number="compled"/>
+            <MapStat text="осталось" :number="all - compled"/>
           </div>
           <div class="progress-container">
-            <MapProgress/>
+            <MapProgress :progress="progress"/>
           </div>
         </div>
       </header>
@@ -27,10 +42,10 @@
       <main class="main-content">
         <div class="map-container">
           <div class="map-buttons">
-            <button @click="async () => await navigateTo('/general')" class="round-button left">
+            <button @click="async () => await navigateTo('/general')" class="round-button ">
                 <Icon style="font-size: 20px;"  name="material-symbols:reply-rounded"/>
             </button>
-            <button class="round-button right">
+            <button class="round-button ">
                 <Icon style="font-size: 20px;" name="material-symbols:chat-rounded"/>
             </button>
           </div>

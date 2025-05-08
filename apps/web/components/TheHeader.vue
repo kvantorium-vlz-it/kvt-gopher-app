@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TenText from './TenText.vue';
-import TwentyText from './TwentyText.vue';
+import TenText from './text/TenText.vue';
+import TwentyText from './text/TwentyText.vue';
 
 defineProps<{
     username: string

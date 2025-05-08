@@ -1,6 +1,4 @@
-<script setup lang="ts">
 
-</script>
 <template>
     <p class="text">
         <slot></slot>
@@ -9,7 +7,7 @@
 <style scoped>
 
 .text{
-    font-family:'Gothic 60' ;
-    font-size: 12px;
+    font-family: 'Gothic 60';
+    font-size: 10px;
 }
 </style>
