@@ -1,6 +1,6 @@
 <template>
     <div class="section">
-            <slot><TwentyText></TwentyText></slot>
+            <TwentyText><slot></slot></TwentyText>
 
         <!-- <div class="content">
             <slot></slot>
