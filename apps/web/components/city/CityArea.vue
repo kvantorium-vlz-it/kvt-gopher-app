@@ -23,8 +23,11 @@
     justify-content: space-between;
     background-color: #EFEFEF;
     height: 200px;
-    background-image: url(../public/images/Semen.png);
-    background-size: 100%;
+    background-image: url(images/suslic.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background-size: 100%; */
 }
 .white{
     color: #ffffff;

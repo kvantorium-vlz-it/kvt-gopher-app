@@ -26,6 +26,8 @@ const submitGuess = () => {
       state.gameOver = true
       
     }, 1500)
+    setTimeout(() => {emit('gameOver')}, 1500)
+    
   } else if (state.guesses.length >= state.maxAttempts) {
     setTimeout(() => {
     state.gameOver = true
@@ -86,8 +88,8 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
     </div>
     
     <div v-if="state.gameOver" class="game-message" :class="{ 'win-animation': state.showWinAnimation }">
-      <p v-if="state.won">Congratulations! You won! 🎉</p>
-      <p v-else>Game Over! The word was: {{ props.word.toUpperCase() }}</p>
+      <p v-if="state.won">Поздравляю! Вы победили! 🎉</p>
+      <p v-else>Игра окончена! Слово было: {{ props.word.toUpperCase() }}</p>
     </div>
 
     <div v-if="!state.gameOver" class="input-container">
@@ -95,7 +97,7 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
         v-model="state.currentGuess"
         type="text"
         :maxlength="props.word.length"
-        placeholder="Enter your guess"
+        placeholder="Введите свой вариант"
         class="guess-input"
         @keyup.enter="submitGuess"
       >
@@ -104,7 +106,7 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
         class="submit-button"
         :disabled="state.currentGuess.length !== props.word.length"
       >
-        Submit
+        Попробовать
       </button>
     </div>
   </div>

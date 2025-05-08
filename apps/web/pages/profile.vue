@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <TheHeader/>
+        <TheHeader username="sadads"/>
         <div class="display">
             <HomeHeader>
                 <template #left>

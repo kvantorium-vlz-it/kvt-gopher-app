@@ -410,18 +410,16 @@ export interface ApiGameGame extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    data: Schema.Attribute.JSON;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::game.game'> &
       Schema.Attribute.Private;
     location: Schema.Attribute.Relation<'oneToOne', 'api::location.location'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    required: Schema.Attribute.Boolean;
-    type: Schema.Attribute.Enumeration<['Ex:', 'quiz']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    word: Schema.Attribute.String;
   };
 }
 

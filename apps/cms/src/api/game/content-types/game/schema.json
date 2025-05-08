@@ -14,24 +14,14 @@
     "name": {
       "type": "string"
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "Ex:",
-        "quiz"
-      ]
-    },
     "location": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::location.location",
       "inversedBy": "game"
     },
-    "required": {
-      "type": "boolean"
-    },
-    "data": {
-      "type": "json"
+    "word": {
+      "type": "string"
     }
   }
 }

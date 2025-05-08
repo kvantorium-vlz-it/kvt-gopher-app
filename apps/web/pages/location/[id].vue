@@ -5,8 +5,11 @@ const { find, create, findOne } = useStrapi()
 
 const locationId = params.id as string
 const location = await findOne('locations', locationId, {
-  populate:['map']
+  populate:['map','game']
 })
+
+console.log(location.data.game.word);
+
 async function createProgress() {
     const user = await fetchUser()
     const userId = user.value?.documentId
@@ -43,5 +46,7 @@ async function createProgress() {
 </script>
 
 <template>
-  <button @click="createProgress">Прошёл</button>
+  
+  <Wordle :word="location.data.game.word" @game-over="createProgress"/>
+  <!-- <button @click="createProgress">Прошёл</button> -->
 </template>

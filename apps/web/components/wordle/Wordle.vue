@@ -1,34 +1,38 @@
 <template>
     <div class="game-wrapper">
-      <div class="setup-container" v-if="!gameStarted">
-        <input 
+      <div class="setup-container" v-if="gameStarted">
+        <!-- <input 
           v-model="word" 
           type="text" 
           placeholder="Enter a word"
           class="word-input"
           :disabled="gameStarted"
-        >
-        <button 
-          @click="startGame" 
+        > -->
+        <button v-if="gameStarted"
+          @click="emit('gameOver')" 
           class="start-button"
-          :disabled="!word || gameStarted"
         >
-          Start Game
+          Дальше
         </button>
       </div>
-      <WordleGame v-if="gameStarted" :word="word" @game-over="gameStarted = false" />
+      <WordleGame :word="word" @game-over="gameStarted = true" />
     </div>
   </template>
   
-  <script setup>
-  const word = ref('')
+  <script setup lang="ts">
+const emit = defineEmits(['gameOver'])
+const props = defineProps<{
+    word: string
+  }>()
+
+  const word = ref(props.word)
   const gameStarted = ref(false)
   
-  const startGame = () => {
-    if (word.value) {
-      gameStarted.value = true
-    }
-  }
+  // const startGame = () => {
+  //   if (word.value) {
+  //     gameStarted.value = true
+  //   }
+  // }
   </script>
   
   <style>
