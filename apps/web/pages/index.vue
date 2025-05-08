@@ -1,72 +1,28 @@
 <script setup lang="ts">
+ const { getProviderAuthenticationUrl } = useStrapiAuth()
 
-const { fetchUser } = useStrapiAuth()
-const user = await fetchUser()
-const { find, findOne } = useStrapi()
-const maps = await find('maps')
+const handleGoogleLogin = () => {
+  window.location.href = getProviderAuthenticationUrl('google')
+  
+}
 
 </script>
 
-
 <template>
-    <div class="main">
-        <TheHeader/>
-        <div class="display">
-            <HomeHeader>
-                <template #left>
-
-                    <MenuButton title="Телефон">
-                        <template #icon>
-                            <Icon name="material-symbols:phone-android"/>
-                        </template>
-                    </MenuButton>
-
-                </template>
-                <template #middle>
-                        <MenuButton title="магазин">
-                        <template #icon>
-                            <Icon name="tdesign:shop"/>
-                        </template>
-                    </MenuButton>
-                </template>
-            <template #right>
-                    <MenuButton title="рейтинг">
-                    <template #icon>
-                            <Icon name="solar:cup-outline"/>
-                        </template>
-                    </MenuButton>
-            </template>
-            
-            
-        </HomeHeader>
-        
-        <Section class="city-section">
-            город
-            <CityArea/>
-        </Section>
-        
-        <Section class="story-section">
-            выбор сюжета
-            
-            <CardSwiper></CardSwiper>
-        </Section>
-      </div>
-    </div>
+  <button @click="handleGoogleLogin">
+    Войти через Google
+  </button>
+  <!-- <div class="app">
+    <CardSwiper />
+  </div> -->
 </template>
-  
+
 <style scoped>
-.main {
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
+.app {
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
-
-.display{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 0px 20px;
-}
-
 </style>
-  

@@ -8,7 +8,7 @@ import type { YMapDefaultMarker } from '@yandex/ymaps3-types/packages/markers';
   const defaultMarker = shallowRef<YMapDefaultMarker | null>(null);
 
 const props = defineProps<{
-  id: string
+
 coords: {
   lon: number
   lat: number
@@ -44,7 +44,7 @@ v-model="defaultMarker"
     <p><strong>Долгота:</strong> {{ props.coords.lat }}</p>
     <p><strong>Широта:</strong> {{ props.coords.lon }}</p>
 
-    <button v-if="is_range(500)" @click.stop="emit('select', id )">Координаты</button>
+    <button v-if="is_range(500)" @click.stop="emit('select' )">Координаты</button>
   </div>
 </template>
 </yandex-map-default-marker>

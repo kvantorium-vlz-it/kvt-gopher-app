@@ -1,54 +1,77 @@
 <script setup lang="ts">
-const { find, findOne } = useStrapi()
+
 const { fetchUser } = useStrapiAuth()
+const user = await fetchUser()
+const { find, findOne } = useStrapi()
+const cities = await find('cities')
 
-// Загружаем данные
-const  cities  = await find('cities', {populate: { maps: { populate: ['locations'] }}})
+const name = user.value?.username!
 
-// Создаем реактивный объект для хранения прогресса
-const progressValues = ref<Record<string, number>>({})
-
-// Вычисляем прогресс для всех карт сразу
-onMounted(async () => {
-  const user = await fetchUser()
-  const userId = user.value?.documentId
-
-
-  // Проходим по всем городам и картам
-  for (const city of cities.data) {
-    for (const map of city.maps) {
-      const mapData = await findOne('maps', map.documentId, { populate: 'locations' })
-      const progresses = await find('user-location-progresses', {
-        filters: {
-          users_permissions_user: { documentId: userId },
-          location: { map: { documentId: map.documentId } }
-        }
-      })
-      
-      // Сохраняем результат
-      progressValues.value[map.id] = Math.round(
-        (progresses.data.length / mapData.data.locations.length) * 100
-      )
-    }
-  }
-})
 </script>
 
+
 <template>
-  <div v-for="city in cities.data" :key="city.id">
-    <h1>{{ city.name }}</h1>
-    <div v-for="map in city.maps" :key="map.id">
-      <h2>{{ map.name }}</h2>
-      Пройдено: {{ progressValues[map.id] || 0 }}%
+    <div class="main">
+        <TheHeader :username="name "/>
+        <div class="display">
+            <HomeHeader>
+                <template #left>
+
+                    <MenuButton title="Телефон">
+                        <template #icon>
+                            <Icon name="material-symbols:phone-android"/>
+                        </template>
+                    </MenuButton>
+
+                </template>
+                <template #middle>
+                        <MenuButton title="магазин">
+                        <template #icon>
+                            <Icon name="tdesign:shop"/>
+                        </template>
+                    </MenuButton>
+                </template>
+            <template #right>
+                    <MenuButton title="рейтинг">
+                    <template #icon>
+                            <Icon name="solar:cup-outline"/>
+                        </template>
+                    </MenuButton>
+            </template>
+            
+            
+        </HomeHeader>
+        
+        <Section class="city-section">
+            город
+            <CityArea/>
+        </Section>
+        
+        <Section class="story-section">
+            выбор сюжета
+            
+            <CardSwiper 
+                :id="cities.data[0].documentId"
+            />
+        </Section>
+      </div>
     </div>
-  </div>
 </template>
-
-
+  
 <style scoped>
-div{
-    border: 1px solid black;
-    border-radius: 10px;
-    margin: 5px;
+.main {
+  font-size: 20px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
 }
+
+.display{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0px 20px;
+}
+
 </style>
+  

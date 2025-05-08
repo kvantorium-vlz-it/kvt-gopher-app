@@ -7,10 +7,10 @@ onMounted(async () => {
   try {
     await authenticateProvider('google', route.query.access_token as string)
     await fetchUser() // Обновляем данные пользователя
-    await navigateTo('/profile')
+    await navigateTo('/general')
   } catch (error) {
     console.error('Ошибка авторизации:', error)
-    await navigateTo('/login')
+    await navigateTo('/')
   }
 })
 </script>

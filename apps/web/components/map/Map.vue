@@ -8,7 +8,6 @@
       YandexMapDefaultMarker,
     } from 'vue-yandex-maps';
     import type { YMapDefaultMarker } from '@yandex/ymaps3-types/packages/markers';
-import { NuxtLink } from '#components';
     
     interface Point {
         lat: number,
@@ -17,7 +16,6 @@ import { NuxtLink } from '#components';
   
     const props = defineProps<{
       points: Point[]
-      
     }>()
     const defaultMarker = shallowRef<YMapDefaultMarker | null>(null);
     const onDragMove = () => {
@@ -37,7 +35,7 @@ import { NuxtLink } from '#components';
           },
         }"
         width="100%"
-        height="500px"
+        height="100%"
     >
       <yandex-map-default-scheme-layer/>
       <yandex-map-default-features-layer/>
@@ -59,7 +57,7 @@ import { NuxtLink } from '#components';
           }"
          />
           <Marcer v-for="point in props.points" 
-          :id = "point.documentId"
+          
           :coords="{
             lon: +point.lon,
             lat: +point.lat
@@ -69,8 +67,8 @@ import { NuxtLink } from '#components';
               lat:+defaultMarker?.coordinates[0]!
 
             }"
-          @select="( async(id:string) => {
-            await navigateTo(`/location/${id}`)
+          @select="( async() => {
+            await navigateTo(`/location/${point.documentId}`)
           })"
          /> 
           

@@ -1,10 +1,12 @@
 <script setup lang="ts">
 const { params } = useRoute()
 const {  fetchUser } = useStrapiAuth()
-const { find, create } = useStrapi()
+const { find, create, findOne } = useStrapi()
 
-const locationId = params.id
-
+const locationId = params.id as string
+const location = await findOne('locations', locationId, {
+  populate:['map']
+})
 async function createProgress() {
     const user = await fetchUser()
     const userId = user.value?.documentId
@@ -20,7 +22,7 @@ async function createProgress() {
     if (existing?.data?.length > 0) {
       console.warn('Прогресс уже существует')
       alert('Вы уже проходили эту локацию')
-      await navigateTo('/profile')
+      await navigateTo(`/map/${location.data.map.documentId}`)
 
       return
     }
@@ -32,7 +34,7 @@ async function createProgress() {
     })
 
     alert('Прогресс успешно добавлен')
-    await navigateTo('/profile')
+    await navigateTo(`/map/${location.data.map.documentId}`)
   } catch (err) {
     console.error('Ошибка при создании прогресса:', err)
     alert('Произошла ошибка')

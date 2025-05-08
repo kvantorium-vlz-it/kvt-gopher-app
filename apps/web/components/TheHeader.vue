@@ -2,6 +2,10 @@
 import TenText from './TenText.vue';
 import TwentyText from './TwentyText.vue';
 
+defineProps<{
+    username: string
+}>()
+
 </script>
 <template>
     <div>
@@ -12,7 +16,7 @@ import TwentyText from './TwentyText.vue';
                 </div>
 
                 <div class="text">
-                    <TwentyText>Семен</TwentyText>
+                    <TwentyText>{{username}}</TwentyText>
                     <TenText class="grey">0 exp</TenText>                
                 </div>    
 
