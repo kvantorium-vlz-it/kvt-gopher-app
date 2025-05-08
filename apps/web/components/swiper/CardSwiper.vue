@@ -61,39 +61,50 @@ const onSwiper = (swiper: any) => {
 </script>
 
 <template>
-  <div class="swiper-container">
-    <swiper
-      :modules="[Autoplay]"
-      :slides-per-view="slidesPerView"
-      :space-between="spaceBetween"
-      :loop="true"
-      :grab-cursor="true"
-      :centered-slides="true"
-      :initial-slide="1"
-      @swiper="onSwiper"
-    >
-      <swiper-slide v-for="map in city.data.maps" :key="map.id" class="swiper-slide">
-        <Plots 
-          :id="map.documentId"
-          :title="map.name"
-          :description="map.description"
-          :percent="progressValues[map.id] || 0"
-        />
-      </swiper-slide>
-    </swiper>
+  <div class="swiper-wrapper">
+    <div class="swiper-container">
+      <swiper
+        :modules="[Autoplay]"
+        :slides-per-view="slidesPerView"
+        :space-between="spaceBetween"
+        :loop="true"
+        :grab-cursor="true"
+        :centered-slides="true"
+        :initial-slide="1"
+        @swiper="onSwiper"
+      >
+        <swiper-slide v-for="map in city.data.maps" :key="map.id" class="swiper-slide">
+          <Plots 
+            :id="map.documentId"
+            :title="map.name"
+            :description="map.description"
+            :percent="progressValues[map.id] || 0"
+          />
+        </swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
 .swiper-container {
   width: 100%;
   padding: 20px;
   overflow: visible;
+  position: relative;
 }
 
 .swiper {
   overflow: visible;
   width: 100%;
+  position: relative;
 }
 
 .swiper-slide {
@@ -108,8 +119,22 @@ const onSwiper = (swiper: any) => {
 }
 
 @media (max-width: 768px) {
+  .swiper-wrapper {
+    overflow: hidden;
+  }
+  
   .swiper-container {
     padding: 10px;
+    overflow: hidden;
+  }
+  
+  .swiper {
+    padding: 10px 20px;
+    overflow: hidden;
+  }
+  
+  .swiper-slide {
+    transform: scale(0.9);
   }
 }
 </style>
