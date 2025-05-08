@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     ]
   },
   devtools: { enabled: false },
-  css: ['~/assets/index.css'],
+  css: ['~/assets/index.css','@/assets/css/fonts.css'],
   modules: [
     'vue-yandex-maps/nuxt',
     '@nuxtjs/strapi',

@@ -8,9 +8,8 @@
 </template>
 <style scoped>
 
-css
 .text{
-    font-family: "Gothic №60", sans-serif;
+    font-family: 'Gothic 60';
     font-size: 20px;
 }
 </style>
