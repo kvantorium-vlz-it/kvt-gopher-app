@@ -455,6 +455,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     map: Schema.Attribute.Relation<'manyToOne', 'api::map.map'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    story: Schema.Attribute.Relation<'manyToOne', 'api::story.story'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -518,7 +519,6 @@ export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     sequence: Schema.Attribute.Integer;
-    speaker: Schema.Attribute.Relation<'oneToOne', 'api::speaker.speaker'>;
     text: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -529,6 +529,7 @@ export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
 export interface ApiSpeakerSpeaker extends Struct.CollectionTypeSchema {
   collectionName: 'speakers';
   info: {
+    description: '';
     displayName: 'speaker';
     pluralName: 'speakers';
     singularName: 'speaker';
@@ -547,9 +548,9 @@ export interface ApiSpeakerSpeaker extends Struct.CollectionTypeSchema {
       'api::speaker.speaker'
     > &
       Schema.Attribute.Private;
-    message: Schema.Attribute.Relation<'oneToOne', 'api::message.message'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    story: Schema.Attribute.Relation<'manyToOne', 'api::story.story'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -568,15 +569,18 @@ export interface ApiStoryStory extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::story.story'> &
       Schema.Attribute.Private;
-    messages: Schema.Attribute.Relation<'oneToMany', 'api::message.message'>;
+    locations: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    speaker: Schema.Attribute.Relation<'oneToOne', 'api::speaker.speaker'>;
+    speakers: Schema.Attribute.Relation<'oneToMany', 'api::speaker.speaker'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
