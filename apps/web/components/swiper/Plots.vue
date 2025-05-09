@@ -8,29 +8,29 @@ defineProps<{
 }>()
 </script>
 <template>
-    <div class="city-area">
-        <Block class="plot-area-card">
-            <div class="plot-call-area">
-                <div class="plot-name-area">
-                    <TwentyText>{{ title }} <br>волжский</TwentyText>
-                    <TenText class="opacity">{{ description }}</TenText>
-                </div>
-                <div class="plot-inf-area">
-                    <div class="plot-percent">
-                        <TwelveText class="opacity">{{ percent }}%</TwelveText>
-                    </div>
-                    <TwelveText class="opacity">выбрано</TwelveText>
-                </div>
+    
+    <Block class="plot-area-card">
+        <div class="plot-call-area">
+            <div class="plot-name-area">
+                <TwentyText>{{ title }} <br>волжский</TwentyText>
+                <TenText class="opacity">{{ description }}</TenText>
             </div>
-            <ButtonAction class="white" @click="async() => {await navigateTo(`map/${id}`)}">вперёд!</ButtonAction>
-            <!-- <img src="../public/images/Semen.png" class="city-area-card-background"> -->
-        </Block>
-        
-    </div>
+            <div class="plot-inf-area">
+                <div class="plot-percent">
+                    <TwelveText class="opacity">{{ percent }}%</TwelveText>
+                </div>
+                <TwelveText class="opacity">выбрано</TwelveText>
+            </div>
+        </div>
+        <ButtonAction class="white" @click="async() => {await navigateTo(`map/${id}`)}">вперёд!</ButtonAction>
+        <!-- <img src="../public/images/Semen.png" class="city-area-card-background"> -->
+    </Block>
+    
+
 </template>
 <style scoped>
 .plot-area-card {
-  background: white;
+  background: radial-gradient(circle, rgba(145, 179, 251, 0.473), rgba(216, 229, 246, 1));
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);

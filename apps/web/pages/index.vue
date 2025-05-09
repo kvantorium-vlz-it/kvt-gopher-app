@@ -1,28 +1,34 @@
-<script setup lang="ts">
- const { getProviderAuthenticationUrl } = useStrapiAuth()
 
-const handleGoogleLogin = () => {
-  window.location.href = getProviderAuthenticationUrl('google')
-  
-}
-
-</script>
 
 <template>
-  <button @click="handleGoogleLogin">
-    Войти через Google
-  </button>
-  <!-- <div class="app">
-    <CardSwiper />
-  </div> -->
+
+
+  <div class="app-container">
+    <div class="container">
+
+      <WelcomeScreen />
+    </div>
+  </div>
 </template>
 
 <style scoped>
-.app {
-  min-height: 100vh;
-  background: #f5f5f5;
+.container {
+  position: absolute;
+  top: 15vh;
+}
+.app-container {
+  background: #f7fafc;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
+  min-height: 100vh;
+  
+ 
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 16px;
+  }
 }
 </style>

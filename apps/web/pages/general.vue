@@ -1,16 +1,17 @@
 <script setup lang="ts">
+import { getData, setData } from 'nuxt-storage/local-storage';
 
 const { fetchUser } = useStrapiAuth()
 const user = await fetchUser()
 const { find, findOne } = useStrapi()
-const cities = await find('cities')
+const cities = await findOne('cities',getData('cityId'))
 
 const name = user.value?.username!
 
 </script>
 
 
-<template>
+<template >
     <div class="main">
         <TheHeader :username="name "/>
         <div class="display">
@@ -51,7 +52,7 @@ const name = user.value?.username!
             выбор сюжета
             
             <CardSwiper 
-                :id="cities.data[0].documentId"
+                :id="cities.data.documentId"
             />
         </Section>
       </div>

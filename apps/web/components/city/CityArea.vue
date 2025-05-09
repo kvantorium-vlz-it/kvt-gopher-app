@@ -1,8 +1,8 @@
 <script setup lang="ts">
 </script>
 <template>
-    <div class="city-area">
-        <Block class="city-area-card">
+    <div class="city-area" >
+        <Block class="city-area-card" style="background-image: url(images/suslic.jpg);">
             <TwentyText class="white">Ваши граждане скучают <br>по своему мэру!</TwentyText>
             <ButtonAction class="white">вперёд!</ButtonAction>
             <!-- <img src="../public/images/Semen.png" class="city-area-card-background"> -->
@@ -17,13 +17,13 @@
     gap: 16px;
 }
 .city-area-card{
+    /* background-image: url(images/suslic.jpg); */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     background-color: #EFEFEF;
     height: 200px;
-    background-image: url(images/suslic.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

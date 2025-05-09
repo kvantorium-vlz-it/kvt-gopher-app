@@ -79,6 +79,9 @@ importers:
       nuxt:
         specifier: ^3.16.2
         version: 3.17.2(typescript@5.8.3)(vite@6.3.5)(vue-tsc@2.2.10)
+      nuxt-storage:
+        specifier: ^1.2.2
+        version: 1.2.2
       nuxt-swiper:
         specifier: ^1.2.2
         version: 1.2.2
@@ -12177,6 +12180,10 @@ packages:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
     dependencies:
       boolbase: 1.0.0
+    dev: false
+
+  /nuxt-storage@1.2.2:
+    resolution: {integrity: sha512-quJbZ87NO7QRCSp7YZolot6VwktciSLuTS/sRl8NPz5rAWA84U5Py0y9FmAsbKTiaqJtFcCKSaJGzky948jA3w==}
     dev: false
 
   /nuxt-swiper@1.2.2:
