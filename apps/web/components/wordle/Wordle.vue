@@ -1,13 +1,7 @@
 <template>
     <div class="game-wrapper">
       <div class="setup-container" v-if="gameStarted">
-        <!-- <input 
-          v-model="word" 
-          type="text" 
-          placeholder="Enter a word"
-          class="word-input"
-          :disabled="gameStarted"
-        > -->
+    
         <button v-if="gameStarted"
           @click="emit('gameOver')" 
           class="start-button"

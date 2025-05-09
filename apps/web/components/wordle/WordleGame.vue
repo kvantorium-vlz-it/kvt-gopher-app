@@ -53,7 +53,7 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
 
 <template>
   <div class="game-container">
-    <h1 class="game-title">Wordle</h1>
+    <TwentyText class="game-title">Wordle</TwentyText>
     
     <div class="grid">
       <div v-for="(guess, i) in state.guesses" :key="i" class="guess-row">
@@ -88,8 +88,8 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
     </div>
     
     <div v-if="state.gameOver" class="game-message" :class="{ 'win-animation': state.showWinAnimation }">
-      <p v-if="state.won">Поздравляю! Вы победили! 🎉</p>
-      <p v-else>Игра окончена! Слово было: {{ props.word.toUpperCase() }}</p>
+      <TwentyText v-if="state.won">Поздравляю! Вы победили! 🎉</TwentyText>
+      <TwentyText v-else>Игра окончена! Слово было: {{ props.word.toUpperCase() }}</TwentyText>
     </div>
 
     <div v-if="!state.gameOver" class="input-container">

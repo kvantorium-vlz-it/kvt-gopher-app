@@ -9,7 +9,7 @@ defineProps<{
 </script>
 <template>
     <div>
-        <Block class="header">
+        <Block class="header" @click="console.log('d')">
                 <div class="img">
                     <img src="../public/images/Semen.png" alt="Profile avatar">
                 </div>
@@ -27,16 +27,34 @@ defineProps<{
     flex-direction: column;
     align-items: center;
 }
-.header{
-    display: flex;
-    padding: 20px;
-    justify-content: center;
-    gap: 12px;
-    background-color: #EFEFEF;
+.header{ 
+    padding: 14px 10px 10px 10px;
+    border-radius: 0;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #EFEFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
+
+.header:hover {
+    background-color: #E5E5E5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
 .grey{
     color: grey;
     opacity: 50%;

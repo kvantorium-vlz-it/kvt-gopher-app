@@ -12,7 +12,7 @@ const cities = await find('cities')
  const hasSelection = ref(false)
 const handleCitySelected = ({ city }) => {
 
-setData('cityId', city)
+setData('cityId', city, 1 , 'd')
 
 
   
