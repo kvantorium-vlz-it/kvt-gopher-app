@@ -1,12 +1,15 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   id: string
   title: string
   description: string
   image?: string
   color: string;
   active: boolean;
+
+  
 }>()
+const IsActive = ref(props.active)
 
 </script>
 <template>
@@ -21,7 +24,10 @@ defineProps<{
                 <TwelveText class="opacity"></TwelveText>
             </div>
         </div>
-        <ButtonAction class="white" @click="async() => {await navigateTo(`map/${id}`)}">забрать!</ButtonAction>
+        <ButtonAction :disabled="!IsActive" @click="() => {IsActive = false}">
+            <span v-if="!IsActive">собрано</span>
+            <span v-if="IsActive">собрать!</span>
+        </ButtonAction>
         <!-- <img src="../public/images/Semen.png" class="city-area-card-background"> -->
     </Block>
     
@@ -40,13 +46,11 @@ defineProps<{
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
-.card-area-card:hover {
+/* .card-area-card:hover {
   transform: translateY(-5px);
-}
+} */
 
 .card-name-area{
     display: flex;
@@ -67,5 +71,6 @@ defineProps<{
     flex-direction: row;
     align-items: baseline;
     gap: 6px;
+    padding: 24px 0px;
 }
 </style>

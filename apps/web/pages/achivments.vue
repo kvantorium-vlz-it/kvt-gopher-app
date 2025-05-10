@@ -1,3 +1,4 @@
+
 <template >
     <div class="main">
         <TheHeader :username="name "/>
@@ -34,12 +35,17 @@
                     </MenuButton>
                 </template>
             </ButtonsAchivments>
-            <div class="cards">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+
+            <div 
+            class="cards" 
+            v-for="i in 10"
+            >
+            <Card 
+                title="собиратель"
+                description="соберите 100 зданий" 
+                :active="true"
+                />
+
             </div>
       </div>
     </div>
@@ -50,7 +56,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    /* flex-wrap: wrap; */
 }
 .main {
     font-size: 20px;
