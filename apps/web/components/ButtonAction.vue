@@ -3,13 +3,11 @@ const props = defineProps({
     disabled: {
     default: false
   },
-
 })
 
 </script>
 
 <template>
-  
     <button class="button" :disabled="props.disabled">
       <TwentyText class="button-action-text"><slot>вперёд!</slot></TwentyText>
     </button>

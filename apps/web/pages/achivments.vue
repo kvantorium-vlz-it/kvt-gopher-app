@@ -10,7 +10,6 @@ const name = user.value?.username!
 
 </script>
 
-
 <template >
     <div class="main">
         <TheHeader :username="name "/>
@@ -32,13 +31,13 @@ const name = user.value?.username!
                         </template>
                     </MenuButton>
                 </template>
-            <template #right>
+                <template #right>
                     <MenuButton title="битвы">
                     <template #icon>
                             <Icon name="material-symbols-light:swords-rounded"/>
                         </template>
                     </MenuButton>
-            </template>
+                </template>
                     <template #main>
                         <MenuButton title="другое">
                         <template #icon>
@@ -46,26 +45,29 @@ const name = user.value?.username!
                         </template>
                     </MenuButton>
                 </template>
-            
-            
-        </ButtonsAchivments>
-        <div class="cards">
-            <Card></Card>
-            <Card></Card>
-        </div>
+            </ButtonsAchivments>
+            <div 
+            class="cards" 
+            v-for="i in 10"
+            >
+            <Card 
+                title="собиратель"
+                description="соберите 100 зданий" 
+                :active="true"
+                />
+            </div>
       </div>
     </div>
 </template>
   
 <style scoped>
 .cards{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
-    flex-wrap: wrap;
 }
 .main {
-  font-size: 20px;
+    font-size: 20px;
     gap: 16px;
     display: flex;
     flex-direction: column;
@@ -79,4 +81,3 @@ const name = user.value?.username!
 }
 
 </style>
-  
