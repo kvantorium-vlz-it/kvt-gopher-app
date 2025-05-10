@@ -1,28 +1,83 @@
 <script setup lang="ts">
-    const { params } = useRoute()
-    const router = useRouter()
-    const { logout,fetchUser  } = useStrapiAuth()
-    const { find,findOne,create  } = useStrapi()
-    const response = ref()
-    const MapId = params.id as string
-    response.value = await findOne('maps',MapId,{
-        populate:['locations']
-    })
-    const user = await fetchUser()
-    const userId = user.value?.documentId
+  const { params } = useRoute()
+  const router = useRouter()
+  const { logout,fetchUser  } = useStrapiAuth()
+  const { find,findOne,create  } = useStrapi()
+  const response = ref()
+  const MapId = params.id as string
+  response.value = await findOne('maps',MapId,{
+    populate:['locations','map_story']
+  })
+  const user = await fetchUser()
+  const userId = user.value?.documentId
 
-    const mapData = await findOne('maps', MapId, { populate: 'locations' })
-      const progresses = await find('user-location-progresses', {
-        filters: {
-          users_permissions_user: { documentId: userId },
-          location: { map: { documentId: MapId } }
+
+  const mapData = await findOne('maps', MapId, { populate: 'locations' })
+  const progresses = await find('user-location-progresses', {
+    filters: {
+      users_permissions_user: { documentId: userId },
+      location: { map: { documentId: MapId } }
+    }
+  })
+
+  const compled = progresses.data.length
+  const all = mapData.data.locations.length
+  const progress = (compled / all)*100
+  const isChatOpen = ref(false)
+  
+  const story = await findOne('map-stories', response.value.data.map_story.documentId, {
+    populate:{
+      speakers:{
+        populate:{
+          avatar:{
+            fields:'url'
+          }
         }
-      })
+      },
+      speaker:true,
+    }
+  })
+  
+  
 
-      const compled = progresses.data.length
-      const all = mapData.data.locations.length
-      const progress = (compled / all)*100
+  const hasSeen = ref()
+  hasSeen.value = await hasSeenDialog()
+  // console.log(await hasSeenDialog());
+  
+
+  async function hasSeenDialog() {
+    const existing = await find('user-map-stories', {
+      filters: {
+        users_permissions_user: { documentId: { $eq: userId } },
+        map_story: { documentId: { $eq: story.data.documentId } },
+      },
+    })
+    
+    if (existing?.data?.length > 0) {
+      console.log(existing.data);
       
+      console.log('Вы уже проходили эту локацию')
+      return true
+    }else{
+      
+      setTimeout(() => {
+
+        openChat()
+      },300)
+
+      
+      
+      return false
+    }
+  }
+
+  const openChat = () => {
+    isChatOpen.value = true
+  }
+  
+  const closeChat = () => {
+    isChatOpen.value = false
+  }
 </script>
 
 <template>
@@ -45,7 +100,7 @@
             <button @click="async () => await navigateTo('/general')" class="round-button ">
                 <Icon style="font-size: 20px;"  name="material-symbols:reply-rounded"/>
             </button>
-            <button class="round-button ">
+            <button class="round-button" @click="openChat" >
                 <Icon style="font-size: 20px;" name="material-symbols:chat-rounded"/>
             </button>
           </div>
@@ -55,19 +110,21 @@
         </div>
       </main>
     </div>
+      
+    <StoryChat
+        :is-open="isChatOpen"
+        :story="story.data"
+        :speakers="story.data.speakers"
+        :current-user="story.data.speaker.name"
+        :has-seen-dialog="hasSeen"
+        :map-story-id="story.data.documentId"
+        @close="closeChat"
+      />
+    
 </template>
   
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
 
 .app-container {
   min-height: 100vh;
@@ -217,4 +274,30 @@ body {
     border-radius: 8px;
   }
 }
+.chat-trigger {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem 2rem;
+    background-color: rgba(71, 125, 255, 1);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+  }
+  
+  .chat-trigger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+  }
+  
+  @media (max-width: 640px) {
+    .chat-trigger {
+      bottom: 1rem;
+      right: 1rem;
+      padding: 0.75rem 1.5rem;
+    }
+  }
 </style>

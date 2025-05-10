@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "map_stories",
+  "info": {
+    "singularName": "map-story",
+    "pluralName": "map-stories",
+    "displayName": "Map story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "map": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::map.map",
+      "inversedBy": "map_story"
+    },
+    "user_map_stories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-map-story.user-map-story",
+      "mappedBy": "map_story"
+    },
+    "speaker": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::speaker.speaker"
+    },
+    "speakers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::speaker.speaker",
+      "mappedBy": "map_story"
+    }
+  }
+}

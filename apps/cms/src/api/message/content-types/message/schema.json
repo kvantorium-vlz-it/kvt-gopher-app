@@ -14,12 +14,6 @@
     "sequence": {
       "type": "integer"
     },
-    "speaker": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::speaker.speaker",
-      "inversedBy": "message"
-    },
     "name": {
       "type": "string"
     },

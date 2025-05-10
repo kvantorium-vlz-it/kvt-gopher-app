@@ -33,6 +33,12 @@
         "videos",
         "audios"
       ]
+    },
+    "map_story": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::map-story.map-story",
+      "mappedBy": "map"
     }
   }
 }

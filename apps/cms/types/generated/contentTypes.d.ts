@@ -455,12 +455,50 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     map: Schema.Attribute.Relation<'manyToOne', 'api::map.map'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    story: Schema.Attribute.Relation<'manyToOne', 'api::story.story'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     user_location_progresses: Schema.Attribute.Relation<
       'oneToMany',
       'api::user-location-progress.user-location-progress'
+    >;
+  };
+}
+
+export interface ApiMapStoryMapStory extends Struct.CollectionTypeSchema {
+  collectionName: 'map_stories';
+  info: {
+    description: '';
+    displayName: 'Map story';
+    pluralName: 'map-stories';
+    singularName: 'map-story';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::map-story.map-story'
+    > &
+      Schema.Attribute.Private;
+    map: Schema.Attribute.Relation<'oneToOne', 'api::map.map'>;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    speaker: Schema.Attribute.Relation<'oneToOne', 'api::speaker.speaker'>;
+    speakers: Schema.Attribute.Relation<'oneToMany', 'api::speaker.speaker'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user_map_stories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-map-story.user-map-story'
     >;
   };
 }
@@ -486,6 +524,10 @@ export interface ApiMapMap extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::map.map'> &
       Schema.Attribute.Private;
     locations: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
+    map_story: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::map-story.map-story'
+    >;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -518,7 +560,6 @@ export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     sequence: Schema.Attribute.Integer;
-    speaker: Schema.Attribute.Relation<'oneToOne', 'api::speaker.speaker'>;
     text: Schema.Attribute.RichText;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -529,6 +570,7 @@ export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
 export interface ApiSpeakerSpeaker extends Struct.CollectionTypeSchema {
   collectionName: 'speakers';
   info: {
+    description: '';
     displayName: 'speaker';
     pluralName: 'speakers';
     singularName: 'speaker';
@@ -547,9 +589,13 @@ export interface ApiSpeakerSpeaker extends Struct.CollectionTypeSchema {
       'api::speaker.speaker'
     > &
       Schema.Attribute.Private;
-    message: Schema.Attribute.Relation<'oneToOne', 'api::message.message'>;
+    map_story: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::map-story.map-story'
+    >;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    story: Schema.Attribute.Relation<'manyToOne', 'api::story.story'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -560,7 +606,7 @@ export interface ApiStoryStory extends Struct.CollectionTypeSchema {
   collectionName: 'stories';
   info: {
     description: '';
-    displayName: 'story';
+    displayName: 'Location story';
     pluralName: 'stories';
     singularName: 'story';
   };
@@ -568,15 +614,18 @@ export interface ApiStoryStory extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    content: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::story.story'> &
       Schema.Attribute.Private;
-    messages: Schema.Attribute.Relation<'oneToMany', 'api::message.message'>;
+    locations: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    speaker: Schema.Attribute.Relation<'oneToOne', 'api::speaker.speaker'>;
+    speakers: Schema.Attribute.Relation<'oneToMany', 'api::speaker.speaker'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -605,6 +654,43 @@ export interface ApiUserLocationProgressUserLocationProgress
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.Relation<'manyToOne', 'api::location.location'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
+export interface ApiUserMapStoryUserMapStory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'user_map_stories';
+  info: {
+    description: '';
+    displayName: 'User map story ';
+    pluralName: 'user-map-stories';
+    singularName: 'user-map-story';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-map-story.user-map-story'
+    > &
+      Schema.Attribute.Private;
+    map_story: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::map-story.map-story'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1110,6 +1196,10 @@ export interface PluginUsersPermissionsUser
       'oneToMany',
       'api::user-location-progress.user-location-progress'
     >;
+    user_map_stories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-map-story.user-map-story'
+    >;
     username: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
@@ -1132,11 +1222,13 @@ declare module '@strapi/strapi' {
       'api::city.city': ApiCityCity;
       'api::game.game': ApiGameGame;
       'api::location.location': ApiLocationLocation;
+      'api::map-story.map-story': ApiMapStoryMapStory;
       'api::map.map': ApiMapMap;
       'api::message.message': ApiMessageMessage;
       'api::speaker.speaker': ApiSpeakerSpeaker;
       'api::story.story': ApiStoryStory;
       'api::user-location-progress.user-location-progress': ApiUserLocationProgressUserLocationProgress;
+      'api::user-map-story.user-map-story': ApiUserMapStoryUserMapStory;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

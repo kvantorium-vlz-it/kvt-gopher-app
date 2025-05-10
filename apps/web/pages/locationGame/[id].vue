@@ -5,7 +5,7 @@ const { find, create, findOne } = useStrapi()
 
 const locationId = params.id as string
 const location = await findOne('locations', locationId, {
-  populate:['map','game']
+  populate:['map','game',]
 })
 
 console.log(location.data.game.word);

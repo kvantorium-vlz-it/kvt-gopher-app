@@ -4,30 +4,38 @@
   "info": {
     "singularName": "speaker",
     "pluralName": "speakers",
-    "displayName": "speaker"
+    "displayName": "speaker",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "name": {
       "type": "string"
     },
-    "message": {
+    "story": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::message.message",
-      "mappedBy": "speaker"
+      "relation": "manyToOne",
+      "target": "api::story.story",
+      "inversedBy": "speakers"
+    },
+    "map_story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::map-story.map-story",
+      "inversedBy": "speakers"
     }
   }
 }

@@ -51,6 +51,12 @@
       "relation": "manyToOne",
       "target": "api::map.map",
       "inversedBy": "locations"
+    },
+    "story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::story.story",
+      "inversedBy": "locations"
     }
   }
 }
