@@ -70,6 +70,12 @@
       "relation": "oneToMany",
       "target": "api::user-location-progress.user-location-progress",
       "mappedBy": "users_permissions_user"
+    },
+    "user_map_stories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-map-story.user-map-story",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

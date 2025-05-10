@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "stories",
+  "collectionName": "map_stories",
   "info": {
-    "singularName": "story",
-    "pluralName": "stories",
-    "displayName": "Location story",
+    "singularName": "map-story",
+    "pluralName": "map-stories",
+    "displayName": "Map story",
     "description": ""
   },
   "options": {
@@ -17,22 +17,28 @@
     "content": {
       "type": "richtext"
     },
-    "speakers": {
+    "maps": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::speaker.speaker",
-      "mappedBy": "story"
+      "target": "api::map.map",
+      "mappedBy": "map_story"
     },
-    "locations": {
+    "user_map_stories": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::location.location",
-      "mappedBy": "story"
+      "target": "api::user-map-story.user-map-story",
+      "mappedBy": "map_story"
     },
     "speaker": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::speaker.speaker"
+    },
+    "speakers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::speaker.speaker",
+      "mappedBy": "map_story"
     }
   }
 }
