@@ -3,8 +3,11 @@ defineProps<{
   id: string
   title: string
   description: string
-  image?: string  
+  image?: string
+  color: string;
+  active: boolean;
 }>()
+
 </script>
 <template>
     

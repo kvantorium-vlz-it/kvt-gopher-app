@@ -1,16 +1,3 @@
-<script setup lang="ts">
-import { getData, setData } from 'nuxt-storage/local-storage';
-
-const { fetchUser } = useStrapiAuth()
-const user = await fetchUser()
-const { find, findOne } = useStrapi()
-const cities = await findOne('cities',getData('cityId'))
-
-const name = user.value?.username!
-
-</script>
-
-
 <template >
     <div class="main">
         <TheHeader :username="name "/>
@@ -32,13 +19,13 @@ const name = user.value?.username!
                         </template>
                     </MenuButton>
                 </template>
-            <template #right>
+                <template #right>
                     <MenuButton title="битвы">
                     <template #icon>
                             <Icon name="material-symbols-light:swords-rounded"/>
                         </template>
                     </MenuButton>
-            </template>
+                </template>
                     <template #main>
                         <MenuButton title="другое">
                         <template #icon>
@@ -46,26 +33,27 @@ const name = user.value?.username!
                         </template>
                     </MenuButton>
                 </template>
-            
-            
-        </ButtonsAchivments>
-        <div class="cards">
-            <Card></Card>
-            <Card></Card>
-        </div>
+            </ButtonsAchivments>
+            <div class="cards">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
       </div>
     </div>
 </template>
   
 <style scoped>
 .cards{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 .main {
-  font-size: 20px;
+    font-size: 20px;
     gap: 16px;
     display: flex;
     flex-direction: column;
@@ -79,4 +67,3 @@ const name = user.value?.username!
 }
 
 </style>
-  

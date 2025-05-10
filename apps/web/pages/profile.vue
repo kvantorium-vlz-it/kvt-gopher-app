@@ -2,9 +2,7 @@
     <div class="main">
         <TheHeader username="sadads" />
         <div class="cituselect">
-            <a href="" style="text-decoration: none;">
-                выбор города здесь
-            </a>
+            <CitySelect/>
         </div>
         <div class="display">
 
@@ -28,7 +26,7 @@
                         достижения
                     </div>
                     <div class="achievements-header-right">
-                        <a style="text-decoration: none;" href="???">        <!-- А куда??? -->
+                        <a style="text-decoration: none; color: black;" href="???">        <!-- А куда??? -->
                             смотреть всё>
                         </a>
                     </div>
@@ -50,12 +48,14 @@
     font-size: 20px;
 }
 .cituselect{
-  position: absolute;
-  left: 70%;
-  top: 90px;
-  font-size: 8.26px;
-  background-color: #D9D9D9;
-  padding: 4px 2px 6px 3px;
+    position: absolute;
+    right: 25px;
+    top: 30px;
+    font-size: 8.26px;
+    background-color: #D9D9D9;
+    padding: 4px 2px 6px 3px;
+    width: 106px;
+    height: 16px;
 }
 .display{
     display: flex;
