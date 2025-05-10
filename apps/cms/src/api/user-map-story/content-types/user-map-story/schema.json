@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_map_stories",
+  "info": {
+    "singularName": "user-map-story",
+    "pluralName": "user-map-stories",
+    "displayName": "User map story ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "map_story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::map-story.map-story",
+      "inversedBy": "user_map_stories"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_map_stories"
+    }
+  }
+}

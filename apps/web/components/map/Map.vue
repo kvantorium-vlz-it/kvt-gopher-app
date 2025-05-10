@@ -68,7 +68,7 @@
 
             }"
           @select="( async() => {
-            await navigateTo(`/location/${point.documentId}`)
+            await navigateTo(`/locationStory/${point.documentId}`)
           })"
          /> 
           

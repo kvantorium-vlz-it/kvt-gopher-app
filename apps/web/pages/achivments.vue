@@ -1,14 +1,3 @@
-<script setup lang="ts">
-import { getData, setData } from 'nuxt-storage/local-storage';
-
-const { fetchUser } = useStrapiAuth()
-const user = await fetchUser()
-const { find, findOne } = useStrapi()
-const cities = await findOne('cities',getData('cityId'))
-
-const name = user.value?.username!
-
-</script>
 
 <template >
     <div class="main">
@@ -46,6 +35,7 @@ const name = user.value?.username!
                     </MenuButton>
                 </template>
             </ButtonsAchivments>
+
             <div 
             class="cards" 
             v-for="i in 10"
@@ -55,6 +45,7 @@ const name = user.value?.username!
                 description="соберите 100 зданий" 
                 :active="true"
                 />
+
             </div>
       </div>
     </div>

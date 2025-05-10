@@ -6,9 +6,11 @@ const props = defineProps<{
   image?: string
   color: string;
   active: boolean;
+
   
 }>()
 const IsActive = ref(props.active)
+
 </script>
 <template>
     

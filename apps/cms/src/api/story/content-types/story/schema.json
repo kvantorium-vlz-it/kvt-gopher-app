@@ -4,20 +4,35 @@
   "info": {
     "singularName": "story",
     "pluralName": "stories",
-    "displayName": "story",
+    "displayName": "Location story",
     "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "messages": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::message.message"
-    },
     "name": {
       "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "speakers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::speaker.speaker",
+      "mappedBy": "story"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location",
+      "mappedBy": "story"
+    },
+    "speaker": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::speaker.speaker"
     }
   }
 }
