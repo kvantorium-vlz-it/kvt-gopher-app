@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { getData, setData } from 'nuxt-storage/local-storage';
+import BlockClothes from '~/components/BlockClothes.vue';
+import SelectClothes from '~/components/BlockClothes.vue';
 
 const { fetchUser } = useStrapiAuth()
 const user = await fetchUser()
@@ -42,12 +44,24 @@ const name = user.value?.username!
             
             
         </ButtonsShop>
-        
+        <Section>
+            город
+            <div class="shop-section">
+                <Clothes />
+                <BlockClothes/>
+            </div>
+        </Section>
       </div>
     </div>
 </template>
   
 <style scoped>
+.shop-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 20px 0px;
+}
 .main {
   font-size: 20px;
     gap: 16px;
@@ -58,7 +72,7 @@ const name = user.value?.username!
 .display{
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
     padding: 0px 20px;
 }
 
