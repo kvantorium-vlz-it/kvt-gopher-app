@@ -36,9 +36,9 @@
     },
     "map_story": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToOne",
       "target": "api::map-story.map-story",
-      "inversedBy": "maps"
+      "mappedBy": "map"
     }
   }
 }

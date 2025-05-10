@@ -10,7 +10,7 @@
   })
   const user = await fetchUser()
   const userId = user.value?.documentId
-console.log(response.value);
+
 
   const mapData = await findOne('maps', MapId, { populate: 'locations' })
   const progresses = await find('user-location-progresses', {
@@ -24,8 +24,7 @@ console.log(response.value);
   const all = mapData.data.locations.length
   const progress = (compled / all)*100
   const isChatOpen = ref(false)
-  const hasSeen = ref()
-
+  
   const story = await findOne('map-stories', response.value.data.map_story.documentId, {
     populate:{
       speakers:{
@@ -40,9 +39,12 @@ console.log(response.value);
   })
   
   
-  onMounted(async()=>{
+
+  const hasSeen = ref()
   hasSeen.value = await hasSeenDialog()
-  })
+  // console.log(await hasSeenDialog());
+  
+
   async function hasSeenDialog() {
     const existing = await find('user-map-stories', {
       filters: {
@@ -52,12 +54,18 @@ console.log(response.value);
     })
     
     if (existing?.data?.length > 0) {
+      console.log(existing.data);
+      
       console.log('Вы уже проходили эту локацию')
       return true
     }else{
       
-    
+      setTimeout(() => {
+
         openChat()
+      },300)
+
+      
       
       return false
     }

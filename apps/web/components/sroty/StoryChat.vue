@@ -85,6 +85,8 @@ const { find, create, findOne } = useStrapi()
 const emit = defineEmits(['close'])
 
 const hasSeenDialog = ref(props.hasSeenDialog)
+// console.log(hasSeenDialog.value);
+
 const isFinished = ref(false)
 
 const visibleMessages = ref([])

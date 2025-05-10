@@ -488,7 +488,7 @@ export interface ApiMapStoryMapStory extends Struct.CollectionTypeSchema {
       'api::map-story.map-story'
     > &
       Schema.Attribute.Private;
-    maps: Schema.Attribute.Relation<'oneToMany', 'api::map.map'>;
+    map: Schema.Attribute.Relation<'oneToOne', 'api::map.map'>;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     speaker: Schema.Attribute.Relation<'oneToOne', 'api::speaker.speaker'>;
@@ -525,7 +525,7 @@ export interface ApiMapMap extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locations: Schema.Attribute.Relation<'oneToMany', 'api::location.location'>;
     map_story: Schema.Attribute.Relation<
-      'manyToOne',
+      'oneToOne',
       'api::map-story.map-story'
     >;
     name: Schema.Attribute.String;

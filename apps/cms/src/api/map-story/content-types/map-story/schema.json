@@ -17,11 +17,11 @@
     "content": {
       "type": "richtext"
     },
-    "maps": {
+    "map": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::map.map",
-      "mappedBy": "map_story"
+      "inversedBy": "map_story"
     },
     "user_map_stories": {
       "type": "relation",
