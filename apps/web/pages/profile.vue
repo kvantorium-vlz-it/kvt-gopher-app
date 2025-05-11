@@ -1,68 +1,109 @@
-<template>
+<script setup lang="ts">
+import { getData, setData } from 'nuxt-storage/local-storage';
+import BlockClothes from '~/components/BlockClothes.vue';
+import SelectClothes from '~/components/BlockClothes.vue';
+
+const { fetchUser } = useStrapiAuth()
+const user = await fetchUser()
+const { find, findOne } = useStrapi()
+const cities = await findOne('cities',getData('cityId'))
+
+const name = user.value?.username!
+
+</script>
+
+
+<template >
     <div class="main">
-        <TheHeader username="sadads" />
-        <div class="cituselect">
-            <CitySelect/>
-        </div>
+        <TheHeader :username="name "/>
         <div class="display">
-
-            <Section class="story-section">
+            <CitySelect></CitySelect>
+            <Section>
                 статистика
-                <div>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9c1904VH9PR2xYqTgQ0YAg9sSj2UAXtrbtQ&s" alt="">
+                <div class="statistic-card">
+                    <Statistic></Statistic>
+                    <Statistic></Statistic>
+                    <Statistic></Statistic>
+                    <Statistic></Statistic>
                 </div>
             </Section>
-
-            <Section class="city-section">
-                твой чушпан
-                <div>
-                    <img src="https://img.pikbest.com/png-images/qiantu/original-cute-cartoon-gopher_2736241.png!sw800" alt="" width="208">
-                </div>
-            </Section>
-
+            <div>
+                <img src="../public/images/block-suslik.png" alt="">
+            </div>
+            
             <Section class="achievements">
                 <div class="achievements-header">
                     <div class="achievements-header-left">
                         достижения
                     </div>
                     <div class="achievements-header-right">
-                        <a style="text-decoration: none; color: black;" href="???">        <!-- А куда??? -->
+                        <a style="text-decoration: none; color: black;" href="???">
                             смотреть всё>
                         </a>
                     </div>
                 </div>
                 <div class="blocks">
-                    <CityArea/>
-                    <CityArea/>
+                    <Card/>
+                    <Card/>
                 </div>
             </Section>
-      </div>
+            <!-- <Section class="suslik-area-card">
+                asdsadsa
+                <div class="suslik-card">
+                    <img src="../public/images/suslik.png" alt="">
+                    <img src="../public/images/inventar.png" alt="">
+                                <div class="menu">
+                <Block>
+                    <MenuButton>
+                        <template #icon>
+                            <Icon name="tdesign:shop"/>
+                        </template>
+                    </MenuButton>
+                </Block>
+                <Block>
+                    <MenuButton>
+                        <template #icon>
+                            <Icon name="tdesign:shop"/>
+                        </template>
+                    </MenuButton>
+                </Block>
+                <Block>
+                    <MenuButton>
+                        <template #icon>
+                            <Icon name="tdesign:shop"/>
+                        </template>
+                    </MenuButton>
+                </Block>
+                <Block>
+                    <MenuButton>
+                        <template #icon>
+                            <Icon name="tdesign:shop"/>
+                        </template>
+                    </MenuButton>
+                </Block>
+                </div>    
+                </div>
+
+            </Section>  -->
+        </div>
     </div>
 </template>
   
 <style scoped>
-.main {
-    gap: 16px;
+/* .menu{
     display: flex;
     flex-direction: column;
-    font-size: 20px;
 }
-.cituselect{
-    position: absolute;
-    right: 25px;
-    top: 30px;
-    font-size: 8.26px;
-    background-color: #D9D9D9;
-    padding: 4px 2px 6px 3px;
-    width: 106px;
-    height: 16px;
-}
-.display{
+.suslik-area-card{
     display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 0px 20px;
+    flex-direction: row;
 }
+
+.suslik-card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+} */
 .achievements-header{
     display: flex;
     flex-direction: row;
@@ -72,4 +113,24 @@
     display: flex;
     gap: 16px;
 }
+.statistic-card{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+.main {
+  font-size: 20px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.display{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 20px;
+}
+
 </style>
+  
