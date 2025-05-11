@@ -12,8 +12,20 @@
       </ComboboxTrigger>
 
       <ComboboxPortal>
-        <ComboboxContent class="content" position="popper">
-          <ComboboxViewport>
+        <ComboboxContent style="
+            overflow: hidden;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            border: 2px solid #e2e8f0;
+            width: auto;
+            margin-top: 8px;
+            max-height: 350px;
+            animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+          " 
+          position="popper">
+        <ComboboxViewport>
             <ComboboxItem 
               v-for="(item) in filteredItems" 
               :key="item.documentId"
@@ -143,7 +155,7 @@ const handleItemClick = (city, index) => {
   transform: rotate(180deg);
 }
 
-.content {
+/* .content {
   overflow: hidden;
   background-color: white;
   border-radius: 12px;
@@ -153,8 +165,8 @@ const handleItemClick = (city, index) => {
   margin-top: 8px;
   max-height: 350px;
   animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 50;
-}
+  z-index: 10;
+} */
 
 .item {
   padding: 14px 18px;

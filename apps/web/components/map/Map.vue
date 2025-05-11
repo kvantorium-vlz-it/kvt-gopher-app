@@ -44,7 +44,7 @@ const hidePopup = () => {
 
 // Auto-scroll images
 useIntervalFn(() => {
-  if (props.points.length > 0) {
+  if (props.points.locations.length > 0) {
     currentImageIndex.value = (currentImageIndex.value + 1) % 2;
   }
 }, 3000);
@@ -52,6 +52,16 @@ useIntervalFn(() => {
 onMounted(() => {
   showPopup();
 });
+function url(point) {
+
+if (point.images === null) {
+  return []
+}
+ const urls = point.images.map(item => item.url)
+ 
+ 
+ return urls
+}
 </script>
 
 <template>
@@ -84,7 +94,7 @@ onMounted(() => {
     />
 
     <Marcer
-      v-for="point in props.points"
+      v-for="point in props.points.locations"
       :coords="{
         lon: +point.lon,
         lat: +point.lat
@@ -93,10 +103,10 @@ onMounted(() => {
         lon: +defaultMarker?.coordinates[1]!,
         lat: +defaultMarker?.coordinates[0]!
       }"
-      :images="['/images/suslic.jpg', '/images/blue.png']"
+      :images="url(point)  "
       :current-image="currentImageIndex"
-      name="ddsdds"
-      description="sadddddddddddd saddddddddddd asddddddddddd"
+      :name="point.name"
+      :description="point.description"
       @mouseenter="showPopup"
       @mouseleave="hidePopup"
       @select="(async () => {

@@ -6,8 +6,18 @@
   const response = ref()
   const MapId = params.id as string
   response.value = await findOne('maps',MapId,{
-    populate:['locations','map_story']
+    populate:{
+      locations:{
+        populate:{
+
+          images:true
+        }
+      },
+      map_story:true
+    }
   })
+  console.log(response.value.data);
+  
   const user = await fetchUser()
   const userId = user.value?.documentId
 
@@ -105,7 +115,7 @@
             </button>
           </div>
           <div class="map-placeholder">
-            <Map :points="response.data.locations"></Map>
+            <Map :points="response.data"></Map>
           </div>
         </div>
       </main>
