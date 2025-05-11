@@ -536,13 +536,13 @@ export interface ApiMapMap extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
-  collectionName: 'messages';
+export interface ApiReadNotigicationReadNotigication
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'read_notigications';
   info: {
-    description: '';
-    displayName: 'message';
-    pluralName: 'messages';
-    singularName: 'message';
+    displayName: 'Read notigication';
+    pluralName: 'read-notigications';
+    singularName: 'read-notigication';
   };
   options: {
     draftAndPublish: true;
@@ -554,13 +554,60 @@ export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::message.message'
+      'api::read-notigication.read-notigication'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    sequence: Schema.Attribute.Integer;
-    text: Schema.Attribute.RichText;
+    sity_notification: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::sity-notification.sity-notification'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user_notigication: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::user-notigication.user-notigication'
+    >;
+    users_permissions_user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
+export interface ApiSityNotificationSityNotification
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'sity_notifications';
+  info: {
+    description: '';
+    displayName: '\u0421ity \u200B\u200Bnotification';
+    pluralName: 'sity-notifications';
+    singularName: 'sity-notification';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Enumeration<['system', 'security', 'profile']>;
+    city: Schema.Attribute.Relation<'oneToOne', 'api::city.city'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    details: Schema.Attribute.RichText;
+    iconUrl: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sity-notification.sity-notification'
+    > &
+      Schema.Attribute.Private;
+    priority: Schema.Attribute.Enumeration<
+      ['critical', 'high', 'medium', 'low']
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['error', 'warning', 'success', 'info']>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -697,6 +744,47 @@ export interface ApiUserMapStoryUserMapStory
       Schema.Attribute.Private;
     users_permissions_user: Schema.Attribute.Relation<
       'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
+export interface ApiUserNotigicationUserNotigication
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'user_notigications';
+  info: {
+    description: '';
+    displayName: 'User notigication';
+    pluralName: 'user-notigications';
+    singularName: 'user-notigication';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Enumeration<['security', 'profile', 'system']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    details: Schema.Attribute.RichText;
+    iconUrl: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-notigication.user-notigication'
+    > &
+      Schema.Attribute.Private;
+    priority: Schema.Attribute.Enumeration<
+      ['low', 'medium', 'high', 'critical']
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['warning', 'error', 'success', 'info']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'oneToOne',
       'plugin::users-permissions.user'
     >;
   };
@@ -1224,11 +1312,13 @@ declare module '@strapi/strapi' {
       'api::location.location': ApiLocationLocation;
       'api::map-story.map-story': ApiMapStoryMapStory;
       'api::map.map': ApiMapMap;
-      'api::message.message': ApiMessageMessage;
+      'api::read-notigication.read-notigication': ApiReadNotigicationReadNotigication;
+      'api::sity-notification.sity-notification': ApiSityNotificationSityNotification;
       'api::speaker.speaker': ApiSpeakerSpeaker;
       'api::story.story': ApiStoryStory;
       'api::user-location-progress.user-location-progress': ApiUserLocationProgressUserLocationProgress;
       'api::user-map-story.user-map-story': ApiUserMapStoryUserMapStory;
+      'api::user-notigication.user-notigication': ApiUserNotigicationUserNotigication;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
