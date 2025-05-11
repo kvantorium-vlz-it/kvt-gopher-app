@@ -46,6 +46,9 @@
         v-for="message in sortedNotifications"
         :key="message.id"
         v-bind="message"
+        :details="detail(message)"
+        :icon-url="message.iconUrl"
+        :read="message.read"
         @click="$emit('messageClick', message)"
       />
     </div>
@@ -85,6 +88,11 @@ const props = defineProps({
     default: 0
   }
 });
+function detail(message) {
+  return new Function(`return ${message.details}`)()
+}
+
+
 
 const emit = defineEmits(['messageClick']);
 const messagesContainer = ref(null);
@@ -111,13 +119,13 @@ const filteredNotifications = computed(() => {
   }
 
   return props.notifications.filter(notification => 
-    isAfter(notification.timestamp, startDate)
+    isAfter(new Date(notification.updatedAt), startDate)
   );
 });
 
 const sortedNotifications = computed(() => {
   return [...filteredNotifications.value].sort((a, b) => 
-    b.timestamp.getTime() - a.timestamp.getTime()
+  new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
   );
 });
 

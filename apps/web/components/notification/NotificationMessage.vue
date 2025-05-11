@@ -2,12 +2,12 @@
   <div 
     class="message" 
     :class="[type, { 'unread': !read }]" 
-    @click="$emit('click')"
+    
   >
     <div class="message-content" :class="priority">
       <div class="message-header">
         <div class="message-icon" :class="type">
-          <img :src="iconUrl" :alt="type" />
+          <img :src="`http://localhost:1337${iconUrl.url}`" :alt="type" />
         </div>
         <div class="message-meta">
           <span class="message-category"><TwentyText>{{ translateCategory(category) }}</TwentyText></span>
@@ -58,7 +58,7 @@ const props = defineProps({
     type: String,
     required: true
   },
-  timestamp: {
+  updatedAt: {
     type: Date,
     required: true
   },
@@ -70,10 +70,6 @@ const props = defineProps({
   read: {
     type: Boolean,
     default: false
-  },
-  actionUrl: {
-    type: String,
-    required: true
   },
   category: {
     type: String as () => NotificationCategory,
@@ -89,6 +85,9 @@ const props = defineProps({
   }
 });
 
+
+
+
 const isDetailsOpen = ref(false);
 
 const toggleDetails = () => {
@@ -96,7 +95,7 @@ const toggleDetails = () => {
 };
 
 const formattedDate = computed(() => {
-  return format(props.timestamp, 'HH:mm, d MMM');
+  return format(new Date(props.updatedAt), 'HH:mm, d MMM');
 });
 
 const translateCategory = (category: NotificationCategory) => {

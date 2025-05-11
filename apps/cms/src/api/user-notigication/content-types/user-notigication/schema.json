@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_notigications",
+  "info": {
+    "singularName": "user-notigication",
+    "pluralName": "user-notigications",
+    "displayName": "User notigication",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "warning",
+        "error",
+        "success",
+        "info"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "security",
+        "profile",
+        "system"
+      ]
+    },
+    "iconUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "details": {
+      "type": "richtext"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
