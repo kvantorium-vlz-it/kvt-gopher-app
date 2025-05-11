@@ -73,6 +73,9 @@ importers:
       '@yandex/ymaps3-types':
         specifier: ^1.0.16452936
         version: 1.0.16477558
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       geolib:
         specifier: ^3.3.4
         version: 3.3.4
@@ -7948,6 +7951,10 @@ packages:
     engines: {node: '>=0.11'}
     dependencies:
       '@babel/runtime': 7.27.1
+    dev: false
+
+  /date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
     dev: false
 
   /db0@0.3.2:

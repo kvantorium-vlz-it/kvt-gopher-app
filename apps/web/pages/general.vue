@@ -18,7 +18,7 @@ const name = user.value?.username!
             <HomeHeader>
                 <template #left>
 
-                    <MenuButton title="Телефон">
+                    <MenuButton title="Телефон" @click="async() => await navigateTo('/notification')">
                         <template #icon>
                             <Icon name="material-symbols:phone-android"/>
                         </template>
