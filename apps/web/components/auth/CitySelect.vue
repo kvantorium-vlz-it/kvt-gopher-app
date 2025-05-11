@@ -84,7 +84,7 @@ const handleItemClick = (city, index) => {
 }
 </script>
 
-<style>
+<style scoped>
 .combobox-wrapper {
   position: relative;
   width: 100%;
