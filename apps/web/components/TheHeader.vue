@@ -42,7 +42,7 @@ defineProps<{
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    flex-direction: column;
+    flex-direction: row;
 
 }
 

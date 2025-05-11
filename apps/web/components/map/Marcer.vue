@@ -101,8 +101,8 @@ const isHovered = ref(false)
         </div>
 
         <div class="content">
-          <h3 v-if="props.name" class="title">{{ props.name }}</h3>
-          <p v-if="props.description" class="description">{{ props.description }}</p>
+          <TwelveText v-if="props.name" class="title">{{ props.name }}</TwelveText>
+          <TenText v-if="props.description" class="description">{{ props.description }}</TenText>
           
           <button 
             v-if="is_range(500)" 
