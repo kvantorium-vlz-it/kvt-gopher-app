@@ -40,17 +40,28 @@ const achievements = [
         <TheHeader :username="name "/>
         <div class="display">
             <CitySelect></CitySelect>
-            <Section>
-                статистика
+
+            <div class="section">
+                <TwentyText>статистика</TwentyText>
                 <div class="statistic-card">
                     <Statistic :title="i.number" :description="i.label" v-for="i in stats"></Statistic>
                 </div>
-            </Section>
+            </div>
+                
             
-                <img src="../public/images/block-suslik.png" alt="">
+                <!-- <img src="../public/images/block-suslik.png" alt=""> -->
             
-            
-            <Section class="achievements">
+            <div class="section">
+                <div class="achievements-header">
+                    <TwentyText>достижения</TwentyText>
+                    <a style="text-decoration: none; color: black;" href="???"><TwentyText>смотреть всё></TwentyText></a>
+                </div>
+                <div class="blocks">
+                    <Card :active="i.active" :description="i.description" :title="i.title" v-for="i in achievements"/>
+                    
+                </div>
+            </div>
+            <!-- <Section class="achievements">
                 <div class="achievements-header">
                     <div class="achievements-header-left">
                         достижения
@@ -65,7 +76,7 @@ const achievements = [
                     <Card :active="i.active" :description="i.description" :title="i.title" v-for="i in achievements"/>
                     
                 </div>
-            </Section>
+            </Section> -->
             <!-- <Section class="suslik-area-card">
                 asdsadsa
                 <div class="suslik-card">
@@ -123,6 +134,11 @@ const achievements = [
     grid-template-columns: repeat(3, 1fr);
 
 } */
+.section{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
 .achievements-header{
     display: flex;
     flex-direction: row;
