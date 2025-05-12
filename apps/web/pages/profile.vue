@@ -61,66 +61,28 @@ const achievements = [
                     
                 </div>
             </div>
-            <!-- <Section class="achievements">
+            
+
+            <div class="section">
                 <div class="achievements-header">
-                    <div class="achievements-header-left">
-                        достижения
-                    </div>
-                    <div class="achievements-header-right">
-                        <a style="text-decoration: none; color: black;" href="???">
-                            смотреть всё>
-                        </a>
-                    </div>
+                    <TwentyText>чушпаньё</TwentyText>
                 </div>
-                <div class="blocks">
-                    <Card :active="i.active" :description="i.description" :title="i.title" v-for="i in achievements"/>
+                <div class="ch-area">
+                    <img 
+                    
                     
                 </div>
-            </Section> -->
-            <!-- <Section class="suslik-area-card">
-                asdsadsa
-                <div class="suslik-card">
-                    <img src="../public/images/suslik.png" alt="">
-                    <img src="../public/images/inventar.png" alt="">
-                                <div class="menu">
-                <Block>
-                    <MenuButton>
-                        <template #icon>
-                            <Icon name="tdesign:shop"/>
-                        </template>
-                    </MenuButton>
-                </Block>
-                <Block>
-                    <MenuButton>
-                        <template #icon>
-                            <Icon name="tdesign:shop"/>
-                        </template>
-                    </MenuButton>
-                </Block>
-                <Block>
-                    <MenuButton>
-                        <template #icon>
-                            <Icon name="tdesign:shop"/>
-                        </template>
-                    </MenuButton>
-                </Block>
-                <Block>
-                    <MenuButton>
-                        <template #icon>
-                            <Icon name="tdesign:shop"/>
-                        </template>
-                    </MenuButton>
-                </Block>
-                </div>    
-                </div>
-
-            </Section>  -->
+            </div>
+            
         </div>
     </div>
 </template>
   
 <style scoped>
-/* .menu{
+.ch-area{
+
+}
+.menu{
     display: flex;
     flex-direction: column;
 }
@@ -129,7 +91,7 @@ const achievements = [
     flex-direction: row;
 }
 
-.suslik-card{
+/* .suslik-card{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
