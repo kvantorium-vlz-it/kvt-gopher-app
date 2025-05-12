@@ -25,9 +25,9 @@ const props = defineProps({
   justify-content: center;
   border: none;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(60, 105, 255, 0.2);
+  /* box-shadow: 0 4px 6px rgba(60, 105, 255, 0.2); */
 }
 
 .button:hover {
