@@ -438,7 +438,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Blocks;
+    description: Schema.Attribute.Text;
     game: Schema.Attribute.Relation<'oneToOne', 'api::game.game'>;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',

@@ -85,7 +85,7 @@ const isHovered = ref(false)
             <img 
               v-for="(image, index) in props.images" 
               :key="index"
-              :src="image" 
+              :src="`http://localhost:1337${image}`" 
               v-show="currentImageIndex === index"
               alt="Location image"
               class="location-image"

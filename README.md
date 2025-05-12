@@ -2,9 +2,19 @@
 # pnpm i
 # pnpm run dev
 
+# Экспорт базы данных
 
+```sh
+cd apps/cms
+pnpm strapi export --file ./data.json --no-encrypt
+```
 
+# Импорт базы данных
 
+```sh
+cd apps/cms
+pnpm strapi import --file ./path-to-data-file
+```
 
 # Turborepo VueJS/NuxtJS starter
 
