@@ -1,4 +1,3 @@
-
 <template >
     <div class="main">
         <TheHeader :username="name "/>
@@ -36,16 +35,13 @@
                 </template>
             </ButtonsAchivments>
 
-            <div 
-            class="cards" 
-            v-for="i in 10"
-            >
-            <Card 
-                title="собиратель"
-                description="соберите 100 зданий" 
-                :active="true"
+            <div class="cards" >
+                <Card 
+                    title="собиратель"
+                    description="соберите 100 зданий" 
+                    :active="true"
+                    v-for="i in 10"
                 />
-
             </div>
       </div>
     </div>
