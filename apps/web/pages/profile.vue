@@ -63,13 +63,29 @@ const achievements = [
             </div>
             
 
-            <div class="section">
+            <div class="inv-area">
                 <div class="achievements-header">
                     <TwentyText>чушпаньё</TwentyText>
                 </div>
                 <div class="ch-area">
-                    <img 
-                    
+                    <img src="../public/images/suslo.svg" class="p">
+                    <div class="inventar-area">
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                    </div>
+                    <div class="tab-area-grid">
+                        <ButtnoTubChushpan></ButtnoTubChushpan>
+                        <ButtnoTubChushpan></ButtnoTubChushpan>
+                        <ButtnoTubChushpan></ButtnoTubChushpan>
+                        <ButtnoTubChushpan></ButtnoTubChushpan>
+                    </div>
                     
                 </div>
             </div>
@@ -79,8 +95,29 @@ const achievements = [
 </template>
   
 <style scoped>
+.p{
+    padding-left: 24px;
+}
+.inv-area{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.g{
+    background-color: blueviolet;
+    width: 57px;
+    aspect-ratio: 1;
+}
+.tab-area-grid{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+}
 .ch-area{
-
+    display: grid;
+    grid-template-columns: 4fr 5fr 1fr;
+    grid-template-rows: repeat(3,1fr);
+    gap: 16px;
 }
 .menu{
     display: flex;
@@ -127,6 +164,13 @@ const achievements = [
     flex-direction: column;
     gap: 20px;
     padding: 0px 20px;
+}
+
+.inventar-area{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 16px;
 }
 
 </style>
