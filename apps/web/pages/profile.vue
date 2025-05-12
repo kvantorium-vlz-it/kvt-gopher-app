@@ -9,7 +9,29 @@ const { find, findOne } = useStrapi()
 const cities = await findOne('cities',getData('cityId'))
 
 const name = user.value?.username!
+const stats = [
+  { number: '120', label: 'ЗАДАНИЙ СОБРАНО' },
+  { number: '9', label: 'КАРТ ОТПРАВЛЕНО' },
+  { number: '56', label: 'ДОСТИЖЕНИЙ СОБРАНО' },
+  { number: '4K', label: 'КАРТ ПРОЙДЕНО' }
+]
 
+const achievements = [
+  {
+    id: '1',
+    title: 'СОБИРАТЕЛЬ',
+    description: 'СОБЕРИТЕ 100 ЗАДАНИЙ',
+    color: '#FFE586',
+    active: true
+  },
+  {
+    id: '2',
+    title: 'ЧУДО-МЭР',
+    description: 'ДОСТИГНИТЕ ОТМЕТКИ В 1000 ЖИТЕЛЕЙ В СВОЕМ ГОРОДЕ',
+    color: '#FFD6D6',
+    active: false
+  }
+]
 </script>
 
 
@@ -21,15 +43,12 @@ const name = user.value?.username!
             <Section>
                 статистика
                 <div class="statistic-card">
-                    <Statistic></Statistic>
-                    <Statistic></Statistic>
-                    <Statistic></Statistic>
-                    <Statistic></Statistic>
+                    <Statistic :title="i.number" :description="i.label" v-for="i in stats"></Statistic>
                 </div>
             </Section>
-            <div>
+            
                 <img src="../public/images/block-suslik.png" alt="">
-            </div>
+            
             
             <Section class="achievements">
                 <div class="achievements-header">
@@ -43,8 +62,8 @@ const name = user.value?.username!
                     </div>
                 </div>
                 <div class="blocks">
-                    <Card/>
-                    <Card/>
+                    <Card :active="i.active" :description="i.description" :title="i.title" v-for="i in achievements"/>
+                    
                 </div>
             </Section>
             <!-- <Section class="suslik-area-card">
