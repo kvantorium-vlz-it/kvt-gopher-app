@@ -42,7 +42,6 @@ const IsActive = ref(props.active)
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: transform 0.3s ease;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;

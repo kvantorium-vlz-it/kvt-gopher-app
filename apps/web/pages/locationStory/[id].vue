@@ -219,7 +219,6 @@ onUnmounted(() => {
   width: 100%;
   height: calc(100vh - 2rem);
   border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   animation: windowAppear 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
@@ -320,14 +319,12 @@ onUnmounted(() => {
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(0);
 }
 
 .option-button:hover {
   background-color: #e5e7eb;
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .next-message-container {
@@ -354,13 +351,11 @@ onUnmounted(() => {
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 
 .next-button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
 }
 
 .next-button:disabled {
@@ -401,7 +396,6 @@ onUnmounted(() => {
   font-size: 2rem;
   cursor: pointer;
   padding: 8px;
-  transition: transform 0.3s ease;
 }
 
 .modal-close:hover {
@@ -418,7 +412,6 @@ onUnmounted(() => {
 /* Modal transitions */
 .modal-enter-active,
 .modal-leave-active {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-enter-from,
