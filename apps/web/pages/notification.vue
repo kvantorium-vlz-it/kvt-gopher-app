@@ -9,7 +9,6 @@
       />
     </div>
   </template>
-  
   <script setup lang="ts">
   import { getData, setData } from 'nuxt-storage/local-storage';
   const { find, create, findOne } = useStrapi()

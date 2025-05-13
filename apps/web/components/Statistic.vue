@@ -9,8 +9,11 @@ const props = defineProps<{
 <template>   
     <Block class="statistic-block">
         <div class="statistic-area-block">
-            <Fortyeight>{{ title }}</Fortyeight>
+
+
+            <FortyeightText>{{ title }}</FortyeightText>
             <TenText class="text-stat">{{ description }}</TenText>
+
         </div>
 
     </Block>

@@ -121,7 +121,6 @@ if (point.images === null) {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .marker-popup {
@@ -132,7 +131,6 @@ if (point.images === null) {
   cursor: pointer;
   font-size: 14px;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transform-origin: center bottom;
   animation: bounce 0.5s ease;
 }
@@ -147,13 +145,10 @@ if (point.images === null) {
   color: #fff;
   padding: 12px 24px;
   white-space: nowrap;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .marker:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .popup {
@@ -165,8 +160,6 @@ if (point.images === null) {
   color: #333;
   opacity: v-bind(popupOpacity);
   transform: translateY(v-bind(isPopupVisible ? '0' : '-10px'));
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes bounce {

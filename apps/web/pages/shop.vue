@@ -20,7 +20,7 @@ const name = user.value?.username!
             <ButtonsShop>
                 <template #left>
 
-                    <MenuButton title="назад">
+                    <MenuButton title="назад" @click="async() => await navigateTo('/general')">
                         <template #icon>
                             <Icon name="tdesign:arrow-left"/>
                         </template>

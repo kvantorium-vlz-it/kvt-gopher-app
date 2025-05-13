@@ -26,21 +26,17 @@ defineProps<{
     gap: 8px;
     border: none;
     width: 100%;
-    transition: all 0.2s ease-in-out;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: relative;
 }
 
 .button:hover {
     background-color: #E5E5E5;
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .button:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .menu-button-icon {
@@ -68,17 +64,14 @@ defineProps<{
 @keyframes pulse {
     0% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(255, 75, 75, 0.7);
     }
     
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 8px rgba(255, 75, 75, 0);
     }
     
     100% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(255, 75, 75, 0);
     }
 }
 </style>

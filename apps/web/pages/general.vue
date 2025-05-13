@@ -72,7 +72,7 @@ onMounted(async()=>{
 
  
     <div class="main">
-        <TheHeader :username="name "/>
+        <TheHeader :username="name "  @click="async() => await navigateTo('/profile')"/>
         <div class="display">
             <HomeHeader>
                 <template #left>
@@ -85,14 +85,14 @@ onMounted(async()=>{
 
                 </template>
                 <template #middle>
-                        <MenuButton title="магазин">
+                        <MenuButton title="магазин" @click="async() => await navigateTo('/shop')">
                         <template #icon>
                             <Icon name="tdesign:shop"/>
                         </template>
                     </MenuButton>
                 </template>
             <template #right>
-                    <MenuButton title="рейтинг">
+                    <MenuButton title="рейтинг" @click="async() => await navigateTo('/profile')">
                     <template #icon>
                             <Icon name="solar:cup-outline"/>
                         </template>

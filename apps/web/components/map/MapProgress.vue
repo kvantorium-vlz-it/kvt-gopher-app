@@ -47,6 +47,5 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   border-radius: 50px;
-  transition: transform 900ms cubic-bezier(0.65, 0, 0.35, 1);
 }
 </style>

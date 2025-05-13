@@ -16,7 +16,6 @@
             overflow: hidden;
             background-color: white;
             border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
             border: 2px solid #e2e8f0;
             width: auto;
             margin-top: 8px;
@@ -112,7 +111,9 @@ const handleItemClick = (city, index) => {
   background-color: #ffffff;
   border: 2px solid #e2e8f0;
   width: 100%;
+
 }
+
 
 .input {
   width: 100%;
@@ -145,7 +146,6 @@ const handleItemClick = (city, index) => {
   overflow: hidden;
   background-color: white;
   border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   border: 2px solid #e2e8f0;
   width: auto;
   margin-top: 8px;
@@ -162,7 +162,6 @@ const handleItemClick = (city, index) => {
   position: relative;
   font-size: 15px;
   color: #1e293b;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 3px solid transparent;
   font-family:'Gothic 60' ;
   font-size: 12px;
