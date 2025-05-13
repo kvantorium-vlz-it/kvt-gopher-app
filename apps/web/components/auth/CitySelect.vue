@@ -108,26 +108,19 @@ const handleItemClick = (city, index) => {
   border-radius: 12px;
   padding: 14px 18px;
   gap: 8px;
-  background-color: white;
+  background-color: #ffffff;
   border: 2px solid #e2e8f0;
   width: 100%;
+
 }
 
-.trigger:hover {
-  border-color: #94a3b8;
-}
-
-.trigger:focus-within {
-  border-color: #64748b;
-  outline: none;
-}
 
 .input {
   width: 100%;
   border: none;
   outline: none;
   font-size: 16px;
-  color: #1e293b;
+  color: #202124;
   background: transparent;
   font-weight: 450;
   letter-spacing: -0.01em;
@@ -144,10 +137,10 @@ const handleItemClick = (city, index) => {
   font-size: 10px;
   color: #64748b;
 }
-
+/* 
 .trigger[data-state="open"] .icon {
   transform: rotate(180deg);
-}
+} */
 
 /* .content {
   overflow: hidden;

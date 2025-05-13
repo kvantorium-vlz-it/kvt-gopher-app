@@ -29,13 +29,16 @@ const props = defineProps({
   /* box-shadow: 0 4px 6px rgba(60, 105, 255, 0.2); */
 }
 
-.button:hover {
+/* .button:hover {
   transform: translateY(-2px);
 }
 
 .button:active {
   transform: translateY(0);
-}
+
+  box-shadow: 0 2px 4px rgba(60, 105, 255, 0.2);
+} */
+
 
 .button-action-text {
   color: #FFFFFF;

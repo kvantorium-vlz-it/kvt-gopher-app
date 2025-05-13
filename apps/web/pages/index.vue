@@ -12,16 +12,17 @@
 </template>
 
 <style scoped>
-.container {
+/* .container {
   position: absolute;
   top: 15vh;
-}
+} */
 .app-container {
   background: #f7fafc;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  top: 15vh;
   
  
 }
