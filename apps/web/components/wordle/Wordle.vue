@@ -50,12 +50,10 @@ const props = defineProps<{
     border-radius: 0.5rem;
     width: 16rem;
     outline: none;
-    transition: all 0.2s ease;
   }
   
   .word-input:focus {
     border-color: #3b82f6;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
   }
   
   .start-button {
@@ -64,8 +62,6 @@ const props = defineProps<{
     color: white;
     border-radius: 0.5rem;
     font-weight: 600;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
   }
   
   .start-button:hover:not(:disabled) {
@@ -73,7 +69,6 @@ const props = defineProps<{
   }
   
   .start-button:focus {
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
   }
   
   .start-button:disabled {

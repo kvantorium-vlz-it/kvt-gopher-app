@@ -41,11 +41,15 @@ const IsActive = ref(props.active)
   padding: 20px;
   display: flex;
   flex-direction: column;
+
+  justify-content: space-between;
+
   gap: 10px;
-  transition: transform 0.3s ease;
+
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* .card-area-card:hover {

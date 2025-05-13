@@ -39,9 +39,7 @@ defineProps<{
     gap: 12px;
     border: none;
     width: 100%;
-    transition: all 0.2s ease-in-out;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     flex-direction: row;
 
 }
@@ -49,12 +47,10 @@ defineProps<{
 .header:hover {
     background-color: #E5E5E5;
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .grey{
@@ -67,7 +63,6 @@ defineProps<{
     height: 48px;
     overflow: hidden;
     border: 1px solid #ffffff8c;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
 }
 .img img {

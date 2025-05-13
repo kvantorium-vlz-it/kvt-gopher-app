@@ -40,76 +40,86 @@ const achievements = [
         <TheHeader :username="name "/>
         <div class="display">
             <CitySelect></CitySelect>
-            <Section>
-                статистика
+
+            <div class="section">
+                <TwentyText>статистика</TwentyText>
                 <div class="statistic-card">
                     <Statistic :title="i.number" :description="i.label" v-for="i in stats"></Statistic>
                 </div>
-            </Section>
+            </div>
+                
             
-                <img src="../public/images/block-suslik.png" alt="">
+                <!-- <img src="../public/images/block-suslik.png" alt=""> -->
             
-            
-            <Section class="achievements">
+            <div class="section">
                 <div class="achievements-header">
-                    <div class="achievements-header-left">
-                        достижения
-                    </div>
-                    <div class="achievements-header-right">
-                        <a style="text-decoration: none; color: black;" href="???">
-                            смотреть всё>
-                        </a>
-                    </div>
+                    <TwentyText>достижения</TwentyText>
+                    <a style="text-decoration: none; color: black;" href="???"><TwentyText>смотреть всё></TwentyText></a>
                 </div>
                 <div class="blocks">
                     <Card :active="i.active" :description="i.description" :title="i.title" v-for="i in achievements"/>
                     
                 </div>
-            </Section>
-            <!-- <Section class="suslik-area-card">
-                asdsadsa
-                <div class="suslik-card">
-                    <img src="../public/images/suslik.png" alt="">
-                    <img src="../public/images/inventar.png" alt="">
-                                <div class="menu">
-                <Block>
-                    <MenuButton>
-                        <template #icon>
-                            <Icon name="tdesign:shop"/>
-                        </template>
-                    </MenuButton>
-                </Block>
-                <Block>
-                    <MenuButton>
-                        <template #icon>
-                            <Icon name="tdesign:shop"/>
-                        </template>
-                    </MenuButton>
-                </Block>
-                <Block>
-                    <MenuButton>
-                        <template #icon>
-                            <Icon name="tdesign:shop"/>
-                        </template>
-                    </MenuButton>
-                </Block>
-                <Block>
-                    <MenuButton>
-                        <template #icon>
-                            <Icon name="tdesign:shop"/>
-                        </template>
-                    </MenuButton>
-                </Block>
-                </div>    
-                </div>
+            </div>
+            
 
-            </Section>  -->
+            <div class="inv-area">
+                <div class="achievements-header">
+                    <TwentyText>чушпаньё</TwentyText>
+                </div>
+                <div class="ch-area">
+                    <img src="../public/images/suslo.svg" class="p">
+                    <div class="inventar-area">
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                        <Block class="g"></Block>
+                    </div>
+                    <div class="tab-area-grid">
+                        <ButtnoTubChushpan></ButtnoTubChushpan>
+                        <ButtnoTubChushpan></ButtnoTubChushpan>
+                        <ButtnoTubChushpan></ButtnoTubChushpan>
+                        <ButtnoTubChushpan></ButtnoTubChushpan>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
     </div>
 </template>
   
 <style scoped>
-/* .menu{
+.p{
+    padding-left: 24px;
+}
+.inv-area{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.g{
+    background-color: blueviolet;
+    width: 57px;
+    aspect-ratio: 1;
+}
+.tab-area-grid{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+}
+.ch-area{
+    display: grid;
+    grid-template-columns: 4fr 5fr 1fr;
+    grid-template-rows: repeat(3,1fr);
+    gap: 16px;
+}
+.menu{
     display: flex;
     flex-direction: column;
 }
@@ -118,11 +128,16 @@ const achievements = [
     flex-direction: row;
 }
 
-.suslik-card{
+/* .suslik-card{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
 } */
+.section{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
 .achievements-header{
     display: flex;
     flex-direction: row;
@@ -149,6 +164,13 @@ const achievements = [
     flex-direction: column;
     gap: 20px;
     padding: 0px 20px;
+}
+
+.inventar-area{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 16px;
 }
 
 </style>

@@ -125,10 +125,8 @@ const translatePriority = (priority: NotificationPriority) => {
 .message {
   margin: 8px 0;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   opacity: 0;
-  animation: slideIn 0.3s ease forwards;
 }
 
 @keyframes slideIn {
@@ -157,10 +155,7 @@ const translatePriority = (priority: NotificationPriority) => {
   position: relative;
   max-width: 90%;
   margin-left: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05),
-              0 4px 16px rgba(0, 0, 0, 0.025);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
 }
 
 .message.unread .message-content::before {
@@ -175,8 +170,6 @@ const translatePriority = (priority: NotificationPriority) => {
 }
 
 .message:hover .message-content {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08),
-              0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .message.info .message-content { border-left: 4px solid #3b82f6; }
@@ -214,7 +207,6 @@ const translatePriority = (priority: NotificationPriority) => {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
@@ -238,7 +230,6 @@ const translatePriority = (priority: NotificationPriority) => {
   color: #94a3b8;
   font-weight: 500;
   letter-spacing: -0.2px;
-  transition: color 0.2s ease;
 }
 
 .message:hover .message-time {
@@ -296,14 +287,12 @@ const translatePriority = (priority: NotificationPriority) => {
   font-size: 13px;
   font-weight: 500;
   color: #3b82f6;
-  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .message:hover .message-details {
   color: #1d4ed8;
   transform: translateX(4px);
-  transition: all 0.3s ease;
 
 }
 
