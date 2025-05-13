@@ -69,7 +69,6 @@ defineEmits(['imageClick', 'imageLoad'])
 }
 
 .message-container {
-  animation: messageAppear 0.5s ease-out forwards;
 }
 
 .avatar {
@@ -79,7 +78,6 @@ defineEmits(['imageClick', 'imageLoad'])
   object-fit: cover;
   border: 2px solid #fff;
   flex-shrink: 0;
-  animation: avatarPop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .message-wrapper {
@@ -88,8 +86,7 @@ defineEmits(['imageClick', 'imageLoad'])
   margin-bottom: 1rem;
   padding: 0 0.5rem;
   opacity: 0;
-  transform: translateY(20px);
-  animation: slideIn 0.5s ease forwards;
+  /* transform: translateY(20px); */
 }
 
 .message-wrapper.current-user {
@@ -117,8 +114,7 @@ defineEmits(['imageClick', 'imageLoad'])
   position: relative;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  transform-origin: left center;
-  animation: bubbleExpand 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* transform-origin: left center; */
 }
 
 .message-bubble::before {
@@ -137,7 +133,7 @@ defineEmits(['imageClick', 'imageLoad'])
 .message-wrapper.current-user .message-bubble {
   background-color: #3b82f6;
   color: white;
-  transform-origin: right center;
+  /* transform-origin: right center; */
 }
 
 .message-wrapper:not(.current-user) .message-bubble::before {
@@ -154,14 +150,12 @@ defineEmits(['imageClick', 'imageLoad'])
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
   opacity: 0;
-  animation: fadeIn 0.3s ease forwards 0.2s;
 }
 
 .message-text {
   margin-bottom: 0.75rem;
   line-height: 1.5;
   opacity: 0;
-  animation: fadeIn 0.3s ease forwards 0.3s;
 }
 
 .message-image {
@@ -171,27 +165,26 @@ defineEmits(['imageClick', 'imageLoad'])
   margin-top: 8px;
   cursor: pointer;
   opacity: 0;
-  animation: fadeIn 0.3s ease forwards 0.4s;
 }
 
 .message-image:hover {
-  transform: scale(1.03);
+  /* transform: scale(1.03); */
 }
 
 @keyframes slideIn {
   to {
     opacity: 1;
-    transform: translateY(0);
+    /* transform: translateY(0); */
   }
 }
 
 @keyframes bubbleExpand {
   from {
-    transform: scale(0.8);
+    /* transform: scale(0.8); */
     opacity: 0;
   }
   to {
-    transform: scale(1);
+    /* transform: scale(1); */
     opacity: 1;
   }
 }
@@ -207,10 +200,10 @@ defineEmits(['imageClick', 'imageLoad'])
 
 @keyframes avatarPop {
   from {
-    transform: scale(0.5);
+    /* transform: scale(0.5); */
   }
   to {
-    transform: scale(1);
+    /* transform: scale(1); */
   }
 }
 </style>

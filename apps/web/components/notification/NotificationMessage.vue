@@ -132,20 +132,20 @@ const translatePriority = (priority: NotificationPriority) => {
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    /* transform: translateX(-20px); */
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    /* transform: translateX(0); */
   }
 }
 
 .message:hover {
-  transform: translateX(6px);
+  /* transform: translateX(6px); */
 }
 
 .message:active {
-  transform: translateX(8px) scale(0.98);
+  /* transform: translateX(8px) scale(0.98); */
 }
 
 .message-content {
@@ -211,7 +211,7 @@ const translatePriority = (priority: NotificationPriority) => {
 }
 
 .message:hover .message-icon {
-  transform: scale(1.1) rotate(-4deg);
+  /* transform: scale(1.1) rotate(-4deg); */
 }
 
 .message-icon img {
@@ -292,7 +292,7 @@ const translatePriority = (priority: NotificationPriority) => {
 
 .message:hover .message-details {
   color: #1d4ed8;
-  transform: translateX(4px);
+  /* transform: translateX(4px); */
 
 }
 
@@ -300,7 +300,6 @@ const translatePriority = (priority: NotificationPriority) => {
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid #f1f5f9;
-  animation: fadeIn 0.3s ease;
   
 }
 
@@ -334,11 +333,11 @@ const translatePriority = (priority: NotificationPriority) => {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    /* transform: translateY(-10px); */
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    /* transform: translateY(0); */
   }
 }
 </style>

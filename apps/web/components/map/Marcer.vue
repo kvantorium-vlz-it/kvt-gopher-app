@@ -124,12 +124,12 @@ const isHovered = ref(false)
   overflow: hidden;
   position: relative;
   width: 280px;
-  transform-style: preserve-3d;
+  /* transform-style: preserve-3d; */
   perspective: 1000px;
 }
 
 .popup:hover {
-  transform: translateY(-4px) rotateX(2deg);
+  /* transform: translateY(-4px) rotateX(2deg); */
 }
 
 .close-button {
@@ -153,7 +153,7 @@ const isHovered = ref(false)
 
 .close-button:hover {
   background: white;
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .image-container {
@@ -170,14 +170,14 @@ const isHovered = ref(false)
 }
 
 .location-image:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 .image-indicators {
   position: absolute;
   bottom: 12px;
   left: 50%;
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
   display: flex;
   gap: 6px;
   z-index: 1;
@@ -192,12 +192,12 @@ const isHovered = ref(false)
 
 .indicator.active {
   background: white;
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
 }
 
 .content {
   padding: 16px;
-  transform: translateZ(20px);
+  /* transform: translateZ(20px); */
 }
 
 .title {
@@ -206,7 +206,6 @@ const isHovered = ref(false)
   font-weight: 600;
   color: #1a1a1a;
   opacity: 0;
-  animation: slideUp 0.5s ease forwards;
 }
 
 .description {
@@ -215,7 +214,6 @@ const isHovered = ref(false)
   color: #666;
   line-height: 1.4;
   opacity: 0;
-  animation: slideUp 0.5s ease 0.2s forwards;
 }
 
 .select-button {
@@ -229,28 +227,27 @@ const isHovered = ref(false)
   font-weight: 500;
   cursor: pointer;
   opacity: 0;
-  animation: slideUp 0.5s ease 0.4s forwards;
-  transform-style: preserve-3d;
+  /* transform-style: preserve-3d; */
 }
 
 .select-button:hover {
   background: #1976D2;
-  transform: translateY(-2px) scale(1.02);
+  /* transform: translateY(-2px) scale(1.02); */
 }
 
 .select-button:active {
-  transform: translateY(0) scale(0.98);
+  /* transform: translateY(0) scale(0.98); */
 }
 
 /* Animations */
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    /* transform: translateY(20px); */
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    /* transform: translateY(0); */
   }
 }
 

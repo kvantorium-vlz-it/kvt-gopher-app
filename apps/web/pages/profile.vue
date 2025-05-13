@@ -70,15 +70,15 @@ const achievements = [
                 <div class="ch-area">
                     <img src="../public/images/suslo.svg" class="p">
                     <div class="inventar-area">
-                        <Block class="g"></Block>
-                        <Block class="g"></Block>
-                        <Block class="g"></Block>
-                        <Block class="g"></Block>
-                        <Block class="g"></Block>
-                        <Block class="g"></Block>
-                        <Block class="g"></Block>
-                        <Block class="g"></Block>
-                        <Block class="g"></Block>
+                        <button class="g"></button>
+                        <button class="g"></button>
+                        <button class="g"></button>
+                        <button class="g"></button>
+                        <button class="g"></button>
+                        <button class="g"></button>
+                        <button class="g"></button>
+                        <button class="g"></button>
+                        <button class="g"></button>
                     </div>
                     <div class="tab-area-grid">
                         <ButtnoTubChushpan></ButtnoTubChushpan>
@@ -104,6 +104,10 @@ const achievements = [
     gap: 16px;
 }
 .g{
+    border: none;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 16px;
     background-color: blueviolet;
     width: 57px;
     aspect-ratio: 1;

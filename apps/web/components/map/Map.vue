@@ -131,8 +131,7 @@ if (point.images === null) {
   cursor: pointer;
   font-size: 14px;
   white-space: nowrap;
-  transform-origin: center bottom;
-  animation: bounce 0.5s ease;
+
 }
 
 .marker {
@@ -148,7 +147,6 @@ if (point.images === null) {
 }
 
 .marker:hover {
-  transform: translateY(-2px);
 }
 
 .popup {
@@ -159,24 +157,24 @@ if (point.images === null) {
   padding: 15px;
   color: #333;
   opacity: v-bind(popupOpacity);
-  transform: translateY(v-bind(isPopupVisible ? '0' : '-10px'));
+  /* transform: translateY(v-bind(isPopupVisible ? '0' : '-10px')); */
 }
 
 @keyframes bounce {
-  0% { transform: scale(0.3); opacity: 0; }
+  /* 0% { transform: scale(0.3); opacity: 0; }
   50% { transform: scale(1.05); }
   70% { transform: scale(0.9); }
-  100% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; } */
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  /* from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); } */
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
+  /* 0% { transform: scale(1); }
   50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  100% { transform: scale(1); } */
 }
 </style>

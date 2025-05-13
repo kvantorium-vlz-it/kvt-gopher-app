@@ -11,7 +11,6 @@ const state = reactive({
   gameOver: false,
   won: false,
   maxAttempts: 6,
-  showWinAnimation: false
 })
 
 const submitGuess = () => {
@@ -22,7 +21,6 @@ const submitGuess = () => {
   if (state.currentGuess === props.word) {
     state.won = true
     setTimeout(() => {
-      state.showWinAnimation = true
       state.gameOver = true
       
     }, 1500)
@@ -64,7 +62,6 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
           :class="[
             getLetterClass(letter, j, guess), 
             `delay-${j}`, 
-            { 'win-tile': state.showWinAnimation && i === state.guesses.length - 1 }
           ]"
         >
           {{ letter.toUpperCase() }}
@@ -87,7 +84,7 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
       </div>
     </div>
     
-    <div v-if="state.gameOver" class="game-message" :class="{ 'win-animation': state.showWinAnimation }">
+    <div v-if="state.gameOver" class="game-message">
       <TwentyText v-if="state.won">Поздравляю! Вы победили! 🎉</TwentyText>
       <TwentyText v-else>Игра окончена! Слово было: {{ props.word.toUpperCase() }}</TwentyText>
     </div>
@@ -151,8 +148,7 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
   font-weight: bold;
   font-size: 1.5rem;
   border-radius: 0.5rem;
-  transform-style: preserve-3d;
-  animation: flip-in 0.6s ease forwards;
+  /* transform-style: preserve-3d; */
 }
 
 .letter-tile.empty {
@@ -178,14 +174,13 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
 }
 
 .win-tile {
-  animation: win-bounce 0.5s ease infinite alternate;
 }
 
-.delay-0 { animation-delay: 0s; }
+/* .delay-0 { animation-delay: 0s; }
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
-.delay-4 { animation-delay: 0.8s; }
+.delay-4 { animation-delay: 0.8s; } */
 
 .input-container {
   position: fixed;
@@ -239,35 +234,34 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
 }
 
 .game-message.win-animation {
-  animation: celebrate 0.5s ease infinite alternate;
 }
 
 @keyframes flip-in {
   0% {
-    transform: rotateX(0deg);
+    /* transform: rotateX(0deg); */
     opacity: 0;
   }
   100% {
-    transform: rotateX(360deg);
+    /* transform: rotateX(360deg); */
     opacity: 1;
   }
 }
 
 @keyframes celebrate {
   0% {
-    transform: scale(1) rotate(0deg);
+    /* transform: scale(1) rotate(0deg); */
   }
   100% {
-    transform: scale(1.1) rotate(5deg);
+    /* transform: scale(1.1) rotate(5deg); */
   }
 }
 
 @keyframes win-bounce {
   0% {
-    transform: translateY(0) scale(1);
+    /* transform: translateY(0) scale(1); */
   }
   100% {
-    transform: translateY(-10px) scale(1.1);
+    /* transform: translateY(-10px) scale(1.1); */
   }
 }
 </style>

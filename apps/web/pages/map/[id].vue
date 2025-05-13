@@ -208,7 +208,7 @@
 }
 
 .round-button:hover {
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
 }
 
 .map-placeholder {
@@ -295,7 +295,7 @@
   }
   
   .chat-trigger:hover {
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
   }
   
   @media (max-width: 640px) {
