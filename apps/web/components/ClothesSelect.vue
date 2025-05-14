@@ -135,7 +135,7 @@ const handleItemClick = (cloth, index) => {
 }
 
 .trigger[data-state="open"] .icon {
-  /* transform: rotate(180deg); */
+  transform: rotate(180deg);
 }
 
 .content {
@@ -146,6 +146,7 @@ const handleItemClick = (cloth, index) => {
   width: auto;
   margin-top: 8px;
   max-height: 350px;
+  animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 50;
 }
 
@@ -194,13 +195,13 @@ const handleItemClick = (cloth, index) => {
 }
 
 @keyframes slideDown {
-  /* from {
+  from {
     opacity: 0;
     transform: translateY(-8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  } */
+  }
 }
 </style>

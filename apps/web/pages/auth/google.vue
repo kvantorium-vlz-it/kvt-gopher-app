@@ -35,12 +35,13 @@ onMounted(async () => {
   border: 3px solid #f3f3f3;
   border-top: 3px solid #3498db;
   border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 
 @keyframes spin {
-  /* 0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); } */
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes fadeInOut {
@@ -69,15 +70,16 @@ onMounted(async () => {
 .dot {
   display: inline-block;
   opacity: 0;
+  animation: dots 1.5s infinite;
 }
   
-/* .dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(1) { animation-delay: 0s; }
 .dot:nth-child(2) { animation-delay: 0.5s; }
-.dot:nth-child(3) { animation-delay: 1s; } */
+.dot:nth-child(3) { animation-delay: 1s; }
   
 @keyframes dots {
-  /* 0%, 20% { opacity: 0; transform: translateY(0); }
+  0%, 20% { opacity: 0; transform: translateY(0); }
   50% { opacity: 1; transform: translateY(-5px); }
-  80%, 100% { opacity: 0; transform: translateY(0); } */
+  80%, 100% { opacity: 0; transform: translateY(0); }
 }
 </style>

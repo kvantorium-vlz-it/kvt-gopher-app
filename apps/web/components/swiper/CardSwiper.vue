@@ -109,12 +109,12 @@ const onSwiper = (swiper: any) => {
 
 .swiper-slide {
   opacity: 0.7;
-  /* transform: scale(0.95); */
+  transform: scale(0.95);
 }
 
 .swiper-slide-active {
   opacity: 1;
-  /* transform: scale(1); */
+  transform: scale(1);
 }
 
 @media (max-width: 768px) {
@@ -133,7 +133,7 @@ const onSwiper = (swiper: any) => {
   }
   
   .swiper-slide {
-    /* transform: scale(0.9); */
+    transform: scale(0.9);
   }
 }
 </style>

@@ -46,11 +46,11 @@ defineProps<{
 
 .header:hover {
     background-color: #E5E5E5;
-    /* transform: translateY(-1px); */
+    transform: translateY(-1px);
 }
 
 .header:active {
-    /* transform: translateY(0); */
+    transform: translateY(0);
 }
 
 .grey{

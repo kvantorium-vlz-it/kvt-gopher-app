@@ -58,10 +58,11 @@ defineProps<{
     background-color: #FF4B4B;
     border-radius: 50%;
     z-index: 2;
+    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    /* 0% {
+    0% {
         transform: scale(0.95);
     }
     
@@ -71,6 +72,6 @@ defineProps<{
     
     100% {
         transform: scale(0.95);
-    } */
+    }
 }
 </style>
