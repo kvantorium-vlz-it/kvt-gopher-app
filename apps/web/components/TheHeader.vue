@@ -28,7 +28,7 @@ defineProps<{
     align-items: center;
 }
 .header{ 
-    padding: 14px 10px 10px 10px;
+    padding: 50px 10px 10px 10px;
     border-radius: 0;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
@@ -39,22 +39,9 @@ defineProps<{
     gap: 12px;
     border: none;
     width: 100%;
-    transition: all 0.2s ease-in-out;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     flex-direction: row;
 
-}
-
-.header:hover {
-    background-color: #E5E5E5;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .grey{
@@ -76,15 +63,4 @@ defineProps<{
     object-fit: cover;
 }
 
-@media (max-width: 768px) {
-    .header {
-        padding: 16px;
-        gap: 8px;
-    }
-    
-    .img {
-        width: 40px;
-        height: 40px;
-    }
-}
 </style>

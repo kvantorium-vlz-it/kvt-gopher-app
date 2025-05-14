@@ -2,7 +2,7 @@
 </script>
 <template>
     <div class="city-area" >
-        <Block class="city-area-card" style="background-image: url(images/suslic.jpg);">
+        <Block class="city-area-card" style="background-image: url(images/uihtfio.svg);">
             <TwentyText class="white">Ваши граждане скучают <br>по своему мэру!</TwentyText>
             <ButtonAction class="white">вперёд!</ButtonAction>
             <!-- <img src="../public/images/Semen.png" class="city-area-card-background"> -->
@@ -28,6 +28,7 @@
     background-position: center;
     background-size: cover;
     /* background-size: 100%; */
+    background-image: url(/apps/web/public/images/city-back.svg);
 }
 .white{
     color: #ffffff;

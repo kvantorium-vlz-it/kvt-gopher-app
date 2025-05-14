@@ -102,18 +102,18 @@ onMounted(async()=>{
             
         </HomeHeader>
         
-        <Section class="city-section">
-            город
-            <CityArea/>
-        </Section>
-        
-        <Section class="story-section">
-            выбор сюжета
-            
+        <div class="city-section">
+            <TwentyText>город</TwentyText>
+            <CityArea></CityArea>
+        </div>
+
+        <div class="plot-section">
+            <TwentyText>выбор сюжета</TwentyText>
             <CardSwiper 
                 :id="cities.data.documentId"
-            />
-        </Section>
+            />      
+        </div>
+
       </div>
     </div>
 </template>
@@ -132,6 +132,17 @@ onMounted(async()=>{
     gap: 16px;
     padding: 0px 20px;
 }
+.city-section{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.plot-section{
+    display: flex;
+    flex-direction: column;
+}
+
 
 </style>
   
