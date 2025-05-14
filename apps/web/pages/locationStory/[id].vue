@@ -196,11 +196,11 @@ onUnmounted(() => {
 @keyframes messageAppear {
   from {
     opacity: 0;
-    /* transform: translateY(20px); */
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    /* transform: translateY(0); */
+    transform: translateY(0);
   }
 }
 
@@ -220,6 +220,7 @@ onUnmounted(() => {
   height: calc(100vh - 2rem);
   border-radius: 0.5rem;
   padding: 1.5rem;
+  animation: windowAppear 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
 }
@@ -243,6 +244,7 @@ onUnmounted(() => {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e5e7eb;
+  animation: slideDown 0.5s ease-out;
 }
 
 .chat-title {
@@ -291,6 +293,7 @@ onUnmounted(() => {
 
 .options-container {
   margin-top: 1.5rem;
+  animation: slideUp 0.4s ease-out;
 }
 
 @media (max-width: 640px) {
@@ -316,12 +319,12 @@ onUnmounted(() => {
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   cursor: pointer;
-  /* transform: translateY(0); */
+  transform: translateY(0);
 }
 
 .option-button:hover {
   background-color: #e5e7eb;
-  /* transform: translateY(-2px); */
+  transform: translateY(-2px);
 }
 
 .next-message-container {
@@ -331,6 +334,7 @@ onUnmounted(() => {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid #e5e7eb;
+  animation: slideUp 0.5s ease-out;
 }
 
 @media (max-width: 640px) {
@@ -351,7 +355,7 @@ onUnmounted(() => {
 }
 
 .next-button:hover:not(:disabled) {
-  /* transform: translateY(-2px); */
+  transform: translateY(-2px);
 }
 
 .next-button:disabled {
@@ -395,7 +399,7 @@ onUnmounted(() => {
 }
 
 .modal-close:hover {
-  /* transform: rotate(90deg); */
+  transform: rotate(90deg);
 }
 
 .modal-image {
@@ -413,40 +417,40 @@ onUnmounted(() => {
 .modal-enter-from,
 .modal-leave-to {
   opacity: 0;
-  /* transform: scale(0.9); */
+  transform: scale(0.9);
 }
 
 /* Additional animations */
 @keyframes windowAppear {
   from {
     opacity: 0;
-    /* transform: translateY(20px); */
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    /* transform: translateY(0); */
+    transform: translateY(0);
   }
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    /* transform: translateY(-20px); */
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    /* transform: translateY(0); */
+    transform: translateY(0);
   }
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    /* transform: translateY(20px); */
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    /* transform: translateY(0); */
+    transform: translateY(0);
   }
 }
 

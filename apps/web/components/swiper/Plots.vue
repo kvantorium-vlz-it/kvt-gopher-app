@@ -46,7 +46,7 @@ defineProps<{
 }
 
 .plot-area-card:hover {
-  /* transform: translateY(-5px); */
+  transform: translateY(-5px);
 }
 
 .plot-name-area{

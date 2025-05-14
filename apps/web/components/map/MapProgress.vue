@@ -19,9 +19,11 @@ onMounted(() => {
   <ProgressRoot
     v-model="progressValue"
     class="ProgressRoot"
+    style="transform: translateZ(0)"
   >
     <ProgressIndicator
       class="ProgressIndicator"
+      :style="`transform: translateX(-${100 - progressValue}%)`"
     />
   </ProgressRoot>
 </template>
@@ -37,6 +39,7 @@ onMounted(() => {
   border-radius: 50px;
   width: 100%;
   height: 25px;
+  transform: translateZ(0);
 }
 
 .ProgressIndicator {
