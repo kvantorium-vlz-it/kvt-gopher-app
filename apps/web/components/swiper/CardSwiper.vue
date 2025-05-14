@@ -89,15 +89,10 @@ const onSwiper = (swiper: any) => {
 <style scoped>
 .swiper-wrapper {
   width: 100%;
-  height: auto;
-  overflow: hidden;
 }
 
 .swiper-container {
   width: 100vw;
-  padding: 20px;
-  overflow: hidden;
-  position: relative;
 }
 
 .swiper {
@@ -123,12 +118,12 @@ const onSwiper = (swiper: any) => {
   }
   
   .swiper-container {
-    padding: 10px;
+  
     overflow: hidden;
   }
   
   .swiper {
-    padding: 10px 20px;
+    padding: 0px 16px;
     overflow: hidden;
   }
   

@@ -42,18 +42,11 @@ defineProps<{
   height: 285px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
-  margin: 0 auto;
   justify-content: space-between;
   align-items: flex-start;
   background-image: url(../../public/images/52.svg);
   background-size: 100%;
   
-}
-
-.plot-area-card:hover {
-  transform: translateY(-5px);
 }
 
 .plot-name-area{
