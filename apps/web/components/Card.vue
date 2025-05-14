@@ -9,8 +9,11 @@ const props = defineProps<{
 
   
 }>()
-const IsActive = ref(props.active)
-
+const { find, findOne, update } = useStrapi()
+const IsActive = ref(!props.active)
+async function up() {
+    await update('user-achievements',props.id,{ collected:true})
+}
 </script>
 <template>
     
@@ -24,7 +27,9 @@ const IsActive = ref(props.active)
                 <TwelveText class="opacity"></TwelveText>
             </div>
         </div>
-        <ButtonAction :disabled="!IsActive" @click="() => {IsActive = false}" class="u">
+
+        <ButtonAction :disabled="!IsActive" @click="() => {up(), IsActive=false}">
+
             <span v-if="!IsActive">собрано</span>
             <span v-if="IsActive">собрать!</span>
         </ButtonAction>

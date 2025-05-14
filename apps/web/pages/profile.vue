@@ -6,7 +6,7 @@ import SelectClothes from '~/components/BlockClothes.vue';
 const { fetchUser } = useStrapiAuth()
 const user = await fetchUser()
 const { find, findOne } = useStrapi()
-const cities = await findOne('cities',getData('cityId'))
+
 
 const name = user.value?.username!
 const stats = [
@@ -16,22 +16,35 @@ const stats = [
   { number: '4K', label: 'КАРТ ПРОЙДЕНО' }
 ]
 
-const achievements = [
-  {
-    id: '1',
-    title: 'СОБИРАТЕЛЬ',
-    description: 'СОБЕРИТЕ 100 ЗАДАНИЙ',
-    color: '#FFE586',
-    active: true
-  },
-  {
-    id: '2',
-    title: 'ЧУДО-МЭР',
-    description: 'ДОСТИГНИТЕ ОТМЕТКИ В 1000 ЖИТЕЛЕЙ В СВОЕМ ГОРОДЕ',
-    color: '#FFD6D6',
-    active: false
-  }
-]
+// const achievements = [
+//   {
+//     id: '1',
+//     title: 'СОБИРАТЕЛЬ',
+//     description: 'СОБЕРИТЕ 100 ЗАДАНИЙ',
+//     color: '#FFE586',
+//     active: true
+//   },
+//   {
+//     id: '2',
+//     title: 'ЧУДО-МЭР',
+//     description: 'ДОСТИГНИТЕ ОТМЕТКИ В 1000 ЖИТЕЛЕЙ В СВОЕМ ГОРОДЕ',
+//     color: '#FFD6D6',
+//     active: false
+//   }
+// ]
+const achievements = await find('user-achievements',{
+    populate:{
+        achievement:true
+    }
+})
+const city = ref()
+city.value = await findOne('cities',getData('cityId'))
+
+const cities = await find('cities')
+const handleCitySelected = ({ city }) => {
+setData('cityId', city, 1 , 'd')
+}
+
 </script>
 
 
@@ -39,7 +52,11 @@ const achievements = [
     <div class="main">
         <TheHeader :username="name "/>
         <div class="display">
-            <CitySelect></CitySelect>
+            <CitySelect
+                :cities="cities.data"
+                @citySelected="handleCitySelected"
+                :value="city.data.name"
+            />
             <Section>
                 статистика
                 <div class="statistic-card">
@@ -62,7 +79,7 @@ const achievements = [
                     </div>
                 </div>
                 <div class="blocks">
-                    <Card :active="i.active" :description="i.description" :title="i.title" v-for="i in achievements"/>
+                    <Card :id="i.documentId" :active="i.collected" :description="i.achievement.description" :title="i.achievement.title" v-for="i in achievements.data"/>
                     
                 </div>
             </Section>
