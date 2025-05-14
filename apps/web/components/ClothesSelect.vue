@@ -100,14 +100,18 @@ const handleItemClick = (cloth, index) => {
   background-color: white;
   border: 2px solid #e2e8f0;
   width: 100%;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .trigger:hover {
   border-color: #94a3b8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .trigger:focus-within {
   border-color: #64748b;
+  box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.15);
   outline: none;
 }
 
@@ -132,6 +136,7 @@ const handleItemClick = (cloth, index) => {
 .icon {
   font-size: 10px;
   color: #64748b;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .trigger[data-state="open"] .icon {
@@ -142,6 +147,7 @@ const handleItemClick = (cloth, index) => {
   overflow: hidden;
   background-color: white;
   border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   border: 2px solid #e2e8f0;
   width: auto;
   margin-top: 8px;
@@ -158,6 +164,7 @@ const handleItemClick = (cloth, index) => {
   position: relative;
   font-size: 15px;
   color: #1e293b;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 3px solid transparent;
   font-family:'Gothic 60' ;
   font-size: 12px;

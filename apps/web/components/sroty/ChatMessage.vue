@@ -78,6 +78,7 @@ defineEmits(['imageClick', 'imageLoad'])
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
   animation: avatarPop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -115,6 +116,7 @@ defineEmits(['imageClick', 'imageLoad'])
   padding: 12px;
   border-radius: 12px;
   position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   word-wrap: break-word;
   overflow-wrap: break-word;
   transform-origin: left center;
@@ -169,6 +171,8 @@ defineEmits(['imageClick', 'imageLoad'])
   border-radius: 8px;
   display: block;
   margin-top: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   opacity: 0;
   animation: fadeIn 0.3s ease forwards 0.4s;

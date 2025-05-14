@@ -200,8 +200,13 @@ async function processItems() {
   
   <style scoped>
   body {
-    background-color: #FFFFFF;
-    color: #000000;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
   }
   
+  * {
+    box-sizing: border-box;
+  }
   </style>

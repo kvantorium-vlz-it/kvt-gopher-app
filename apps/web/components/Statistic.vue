@@ -9,11 +9,8 @@ const props = defineProps<{
 <template>   
     <Block class="statistic-block">
         <div class="statistic-area-block">
-
-
-            <FortyeightText>{{ title }}</FortyeightText>
-            <TenText class="text-stat">{{ description }}</TenText>
-
+            <Fortyeight>{{ title }}</Fortyeight>
+            <TenText>{{ description }}</TenText>
         </div>
 
     </Block>
@@ -24,9 +21,7 @@ const props = defineProps<{
     flex-direction: column;
     align-items: center;
 }
-.text-stat{
-  text-align: center;
-}
+
 .statistic-block{
   background-color: #EFEFEF;
   border-radius: 16px;
@@ -35,5 +30,6 @@ const props = defineProps<{
   flex-direction: column;
   gap: 16px;
   width: 100%;
+  max-width: 400px;
 }
 </style>

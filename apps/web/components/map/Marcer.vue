@@ -121,15 +121,18 @@ const isHovered = ref(false)
 .popup {
   background: white;
   border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   position: relative;
   width: 280px;
   transform-style: preserve-3d;
   perspective: 1000px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .popup:hover {
   transform: translateY(-4px) rotateX(2deg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .close-button {
@@ -148,6 +151,7 @@ const isHovered = ref(false)
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
   /* backdrop-filter: blur(4px); */
 }
 
@@ -167,6 +171,7 @@ const isHovered = ref(false)
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .location-image:hover {
@@ -188,6 +193,7 @@ const isHovered = ref(false)
   height: 6px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
 }
 
 .indicator.active {
@@ -228,6 +234,7 @@ const isHovered = ref(false)
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  transition: all 0.3s ease;
   opacity: 0;
   animation: slideUp 0.5s ease 0.4s forwards;
   transform-style: preserve-3d;
@@ -236,6 +243,7 @@ const isHovered = ref(false)
 .select-button:hover {
   background: #1976D2;
   transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
 }
 
 .select-button:active {
@@ -256,6 +264,7 @@ const isHovered = ref(false)
 
 .fade-enter-active,
 .fade-leave-active {
+  transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,

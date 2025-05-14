@@ -145,6 +145,7 @@ watch(() => sortedNotifications.value.length, () => {
   border-radius: 10px;
   border: none;
   background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -152,6 +153,7 @@ watch(() => sortedNotifications.value.length, () => {
   padding: 8px;
   position: relative;
   left: -8px;
+  transition: all 0.3s ease;
 }
 
 .round-button:active {
@@ -160,6 +162,7 @@ watch(() => sortedNotifications.value.length, () => {
 
 .round-button:hover {
   transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .select-viewport {
@@ -185,6 +188,8 @@ watch(() => sortedNotifications.value.length, () => {
     margin: auto;
     height: calc(100vh);
     border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08),
+                0 2px 4px rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(0, 0, 0, 0.08);
   }
 }
@@ -261,6 +266,7 @@ watch(() => sortedNotifications.value.length, () => {
   font-weight: 500;
   cursor: pointer;
   outline: none;
+  transition: all 0.2s ease;
 }
 
 @media (min-width: 641px) {
@@ -280,12 +286,14 @@ watch(() => sortedNotifications.value.length, () => {
 
 .select-trigger:focus {
   border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
 }
 
 .select-content {
   overflow: hidden;
   background-color: white;
   border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border: 1px solid #e2e8f0;
   animation: slideDownAndFade 0.2s ease;
 }
@@ -315,6 +323,7 @@ watch(() => sortedNotifications.value.length, () => {
   user-select: none;
   outline: none;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 @media (min-width: 641px) {
@@ -352,6 +361,8 @@ watch(() => sortedNotifications.value.length, () => {
   padding: 4px 12px;
   border-radius: 16px;
   font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 @media (min-width: 641px) {
@@ -402,6 +413,7 @@ watch(() => sortedNotifications.value.length, () => {
 .chat-messages::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 2px;
+  transition: background 0.2s ease;
 }
 
 .chat-messages::-webkit-scrollbar-thumb:hover {

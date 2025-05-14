@@ -108,6 +108,7 @@ const onSwiper = (swiper: any) => {
 }
 
 .swiper-slide {
+  transition: all 0.3s ease;
   opacity: 0.7;
   transform: scale(0.95);
 }

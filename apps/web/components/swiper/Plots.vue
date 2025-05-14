@@ -33,11 +33,13 @@ defineProps<{
   background: radial-gradient(circle, rgba(145, 179, 251, 0.473), rgba(216, 229, 246, 1));
   border-radius: 15px;
   padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 322px;
   height: 285px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: transform 0.3s ease;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;

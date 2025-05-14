@@ -201,14 +201,17 @@
   border-radius: 12px;
   border: none;
   background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .round-button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .map-placeholder {
@@ -291,11 +294,13 @@
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 100;
   }
   
   .chat-trigger:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
   }
   
   @media (max-width: 640px) {
