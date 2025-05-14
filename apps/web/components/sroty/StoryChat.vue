@@ -265,12 +265,14 @@ onUnmounted(() => {
   margin: 1rem;
   background-color: white;
   border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
 }
 
 .slide-enter-active,
 .slide-leave-active {
+  transition: transform 0.3s ease-out;
 }
 
 .slide-enter-from {
@@ -343,6 +345,7 @@ onUnmounted(() => {
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .next-button:disabled {

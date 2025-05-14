@@ -128,6 +128,7 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
   font-weight: bold;
   color: #1f2937;
   margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .grid {
@@ -151,6 +152,8 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
   font-weight: bold;
   font-size: 1.5rem;
   border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
   transform-style: preserve-3d;
   animation: flip-in 0.6s ease forwards;
 }
@@ -158,6 +161,7 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
 .letter-tile.empty {
   border: 2px solid #d1d5db;
   background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .letter-tile.correct {
@@ -204,10 +208,12 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
   border: 2px solid #d1d5db;
   border-radius: 0.5rem;
   outline: none;
+  transition: all 0.2s ease;
 }
 
 .guess-input:focus {
   border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
 .submit-button {
@@ -216,6 +222,8 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
   color: white;
   border-radius: 0.5rem;
   font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
 .submit-button:hover:not(:disabled) {
@@ -223,6 +231,7 @@ const getLetterClass = (letter: string, index: number, guess: string) => {
 }
 
 .submit-button:focus {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
 }
 
 .submit-button:disabled {

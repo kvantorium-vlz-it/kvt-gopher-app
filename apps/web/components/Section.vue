@@ -5,10 +5,3 @@
     </div>
 </template>
 
-<style scoped>
-.section{
-    display: flex;
-    gap: 16px;
-}
-</style>
-

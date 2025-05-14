@@ -16,6 +16,7 @@
             overflow: hidden;
             background-color: white;
             border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
             border: 2px solid #e2e8f0;
             width: auto;
             margin-top: 8px;
@@ -108,19 +109,30 @@ const handleItemClick = (city, index) => {
   border-radius: 12px;
   padding: 14px 18px;
   gap: 8px;
-  background-color: #ffffff;
+  background-color: white;
   border: 2px solid #e2e8f0;
   width: 100%;
-
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.trigger:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.trigger:focus-within {
+  border-color: #64748b;
+  box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.15);
+  outline: none;
+}
 
 .input {
   width: 100%;
   border: none;
   outline: none;
   font-size: 16px;
-  color: #202124;
+  color: #1e293b;
   background: transparent;
   font-weight: 450;
   letter-spacing: -0.01em;
@@ -136,16 +148,18 @@ const handleItemClick = (city, index) => {
 .icon {
   font-size: 10px;
   color: #64748b;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* 
+
 .trigger[data-state="open"] .icon {
   transform: rotate(180deg);
-} */
+}
 
 /* .content {
   overflow: hidden;
   background-color: white;
   border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   border: 2px solid #e2e8f0;
   width: auto;
   margin-top: 8px;
@@ -162,6 +176,7 @@ const handleItemClick = (city, index) => {
   position: relative;
   font-size: 15px;
   color: #1e293b;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 3px solid transparent;
   font-family:'Gothic 60' ;
   font-size: 12px;
