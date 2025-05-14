@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "achievements",
+  "info": {
+    "singularName": "achievement",
+    "pluralName": "achievements",
+    "displayName": "achievement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "user_achievements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-achievement.user-achievement",
+      "mappedBy": "achievement"
+    }
+  }
+}

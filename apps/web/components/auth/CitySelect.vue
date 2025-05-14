@@ -76,12 +76,16 @@ const props = defineProps({
     type: Array,
     required: true,
     default: () => []
+  },
+  value: {
+    type: String,
+    required: false
   }
 })
 
 const emit = defineEmits(['update:hasSelection', 'citySelected'])
-
 const value = ref('')
+value.value = props.value
 const filteredItems = computed(() => {
   return props.cities
 })
