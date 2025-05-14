@@ -155,11 +155,11 @@ watch(() => sortedNotifications.value.length, () => {
 }
 
 .round-button:active {
-  transform: scale(0.95);
+  /* transform: scale(0.95); */
 }
 
 .round-button:hover {
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
 }
 
 .select-viewport {
@@ -176,7 +176,6 @@ watch(() => sortedNotifications.value.length, () => {
   flex-direction: column;
   background: white;
   overflow: hidden;
-  animation: fadeIn 0.4s ease;
 }
 
 @media (min-width: 641px) {
@@ -192,11 +191,11 @@ watch(() => sortedNotifications.value.length, () => {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    /* transform: translateY(10px); */
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    /* transform: translateY(0); */
   }
 }
 
@@ -287,7 +286,6 @@ watch(() => sortedNotifications.value.length, () => {
   background-color: white;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
-  animation: slideDownAndFade 0.2s ease;
 }
 
 @media (min-width: 641px) {
@@ -337,11 +335,11 @@ watch(() => sortedNotifications.value.length, () => {
 @keyframes slideDownAndFade {
   from {
     opacity: 0;
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    /* transform: translateY(0); */
   }
 }
 
@@ -365,7 +363,7 @@ watch(() => sortedNotifications.value.length, () => {
 .header-stats:hover {
   background: #e2e8f0;
   color: #475569;
-  transform: translateY(-1px);
+  /* transform: translateY(-1px); */
 }
 
 .chat-messages {

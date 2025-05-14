@@ -23,7 +23,7 @@
   align-items: center;
   min-height: 100vh;
   top: 15vh;
-  
+  padding: 16px;
  
 }
 

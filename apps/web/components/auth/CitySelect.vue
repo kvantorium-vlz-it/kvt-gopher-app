@@ -20,7 +20,6 @@
             width: auto;
             margin-top: 8px;
             max-height: 350px;
-            animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 10;
           " 
           position="popper">
@@ -201,11 +200,11 @@ const handleItemClick = (city, index) => {
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    /* transform: translateY(-8px); */
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    /* transform: translateY(0); */
   }
 }
 </style>
