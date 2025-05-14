@@ -114,29 +114,18 @@ const handleItemClick = (city, index) => {
   padding: 14px 18px;
   gap: 8px;
   background-color: white;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #00000019;
   width: 100%;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.trigger:hover {
-  border-color: #94a3b8;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
 
-.trigger:focus-within {
-  border-color: #64748b;
-  box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.15);
-  outline: none;
-}
 
 .input {
   width: 100%;
   border: none;
   outline: none;
   font-size: 16px;
-  color: #1e293b;
+  color: #000000;
   background: transparent;
   font-weight: 450;
   letter-spacing: -0.01em;
@@ -145,14 +134,13 @@ const handleItemClick = (city, index) => {
 }
 
 .input::placeholder {
-  color: #94a3b8;
+  color: #000000;
   font-weight: 400;
 }
 
 .icon {
   font-size: 10px;
-  color: #64748b;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #000000;
 }
 
 .trigger[data-state="open"] .icon {
@@ -180,21 +168,20 @@ const handleItemClick = (city, index) => {
   position: relative;
   font-size: 15px;
   color: #1e293b;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 3px solid transparent;
   font-family:'Gothic 60' ;
   font-size: 12px;
 }
 
 .item[data-highlighted] {
-  background-color: #f8fafc;
-  border-left-color: #94a3b8;
+  background-color: #477DFF20;
+  border-left-color: #00000020;
 }
 
 .item[data-state="checked"] {
-  background-color: #f1f5f9;
+  background-color: #477DFF20;
   font-weight: 500;
-  border-left-color: #64748b;
+  border-left-color: #477DFF20;
 }
 
 .indicator {
@@ -204,27 +191,18 @@ const handleItemClick = (city, index) => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #64748b;
+  color: #000000;
   font-size: 14px;
 }
 
 .empty-state {
   padding: 20px;
   text-align: center;
-  color: #64748b;
+  color: #000000;
   font-size: 14px;
   font-style: italic;
   background-color: #f8fafc;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 </style>

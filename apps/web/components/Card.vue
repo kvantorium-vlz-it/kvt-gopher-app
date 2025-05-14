@@ -27,7 +27,9 @@ async function up() {
                 <TwelveText class="opacity"></TwelveText>
             </div>
         </div>
+
         <ButtonAction :disabled="!IsActive" @click="() => {up(), IsActive=false}">
+
             <span v-if="!IsActive">собрано</span>
             <span v-if="IsActive">собрать!</span>
         </ButtonAction>
@@ -37,18 +39,20 @@ async function up() {
 
 </template>
 <style scoped>
+.u{
+    width: 100%;
+}
 .card-area-card {
   background: radial-gradient(#FFE586, #FBFBFB);
   background-position: bottom left;
-  border-radius: 15px;
+  border-radius: 16px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: transform 0.3s ease;
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* .card-area-card:hover {

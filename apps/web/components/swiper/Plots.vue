@@ -23,32 +23,30 @@ defineProps<{
             </div>
         </div>
         <ButtonAction class="white" @click="async() => {await navigateTo(`map/${id}`)}">вперёд!</ButtonAction>
-        <!-- <img src="../public/images/Semen.png" class="city-area-card-background"> -->
+        <!-- <img src="../../public/images/52.svg" class="image-plot"> -->
+
     </Block>
     
 
 </template>
 <style scoped>
+/* .image-plot{
+    position: absolute;
+    z-index: -1;
+} */
 .plot-area-card {
-  background: radial-gradient(circle, rgba(145, 179, 251, 0.473), rgba(216, 229, 246, 1));
-  border-radius: 15px;
+  isolation: isolate;
+  border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 322px;
   height: 285px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  transition: transform 0.3s ease;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-.plot-area-card:hover {
-  transform: translateY(-5px);
+  background-image: url(../../public/images/52.svg);
+  background-size: 100%;
+  
 }
 
 .plot-name-area{

@@ -10,7 +10,7 @@ const props = defineProps<{
     <Block class="statistic-block">
         <div class="statistic-area-block">
             <Fortyeight>{{ title }}</Fortyeight>
-            <TenText>{{ description }}</TenText>
+            <TenText class="center">{{ description }}</TenText>
         </div>
 
     </Block>
@@ -31,5 +31,8 @@ const props = defineProps<{
   gap: 16px;
   width: 100%;
   max-width: 400px;
+}
+.center{
+  text-align: center;
 }
 </style>
