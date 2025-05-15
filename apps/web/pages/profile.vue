@@ -68,7 +68,7 @@ setData('cityId', city, 1 , 'd')
                 <!-- <img src="../public/images/block-suslik.png" alt=""> -->
             
 
-            
+
 
             <div class="inv-area">
                 <div class="achievements-header">
@@ -93,6 +93,7 @@ setData('cityId', city, 1 , 'd')
                         <ButtnoTubChushpan></ButtnoTubChushpan>
                         <ButtnoTubChushpan></ButtnoTubChushpan>
                     </div>
+
 
                 </div>            
             </div>
@@ -155,7 +156,9 @@ setData('cityId', city, 1 , 'd')
     grid-template-columns: repeat(3, 1fr);
 
 } */
+
 .section{
+
     display: flex;
     gap: 16px;
     flex-direction: column;

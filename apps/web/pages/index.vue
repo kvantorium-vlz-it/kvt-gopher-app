@@ -20,7 +20,7 @@
   background: #f7fafc;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   min-height: 100vh;
   
  

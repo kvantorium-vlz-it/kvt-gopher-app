@@ -22,7 +22,7 @@
             margin-top: 8px;
             max-height: 350px;
             animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 10;
+            /* z-index: 10; */
           " 
           position="popper">
         <ComboboxViewport>
