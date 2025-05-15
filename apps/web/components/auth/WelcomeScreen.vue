@@ -18,11 +18,11 @@ setData('cityId', city, 1 , 'd')
 <template>
   
   <div class="welcome-container">
-    <div>
+    <div class="container-text">
       <TwentyText class="welcome-title">ДОБРО ПОЖАЛОВАТЬ В НАЗВАНИЕИГРЫ!</TwentyText>
       <TwelveText class="welcome-text">Пожалуйста, выберите город, в котором мы начнём</TwelveText>
     </div>
-    <div>
+    <div class="container-select">
         <div class="select-container">
         <CitySelect 
           :cities="cities.data"
@@ -41,8 +41,19 @@ setData('cityId', city, 1 , 'd')
 </template>
 
 <style scoped>
+.container-select{
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+.container-text{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 20px;
+}
 .welcome-container {
-  padding: 30px;
+  padding: 16px;
   text-align: center;
   background: white;
   border-radius: 16px;

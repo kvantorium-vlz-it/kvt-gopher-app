@@ -67,22 +67,16 @@ setData('cityId', city, 1 , 'd')
                 <img src="../public/images/block-suslik.png" alt="">
             
             
-            <Section class="achievements">
+            <div class="section">
                 <div class="achievements-header">
-                    <div class="achievements-header-left">
-                        достижения
-                    </div>
-                    <div class="achievements-header-right">
-                        <a style="text-decoration: none; color: black;" href="???">
-                            смотреть всё>
-                        </a>
-                    </div>
+                    <TwentyText>достижения</TwentyText>
+                    <a style="text-decoration: none; color: black;" href="???"><TwentyText>смотреть всё></TwentyText></a>
                 </div>
                 <div class="blocks">
-                    <Card :id="i.documentId" :active="i.collected" :description="i.achievement.description" :title="i.achievement.title" v-for="i in achievements.data"/>
+                    <Card :active="i.active" :description="i.description" :title="i.title" v-for="i in achievements"/>
                     
                 </div>
-            </Section>
+            </div>
             <!-- <Section class="suslik-area-card">
                 asdsadsa
                 <div class="suslik-card">
@@ -140,6 +134,11 @@ setData('cityId', city, 1 , 'd')
     grid-template-columns: repeat(3, 1fr);
 
 } */
+ .section{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
 .achievements-header{
     display: flex;
     flex-direction: row;
