@@ -167,7 +167,9 @@ setData('cityId', city, 1 , 'd')
     gap: 16px;
 }
 .g{
+
     background-color: #EFEFEF;
+
     width: 57px;
     aspect-ratio: 1;
 }
