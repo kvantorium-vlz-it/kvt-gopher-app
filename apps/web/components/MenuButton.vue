@@ -17,6 +17,7 @@ defineProps<{
 
 <style scoped>
 .button {
+    position: relative;
     padding: 14px 10px 10px 10px;
     border-radius: 16px;
     background-color: #EFEFEF;

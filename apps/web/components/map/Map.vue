@@ -68,8 +68,8 @@ if (point.images === null) {
   <yandex-map
     :settings="{
       location: {
-        center: [37.617644, 55.755819],
-        zoom: 9,
+        center: [44.746292,48.797957 ],
+        zoom: 15,
       },
     }"
     width="100%"
@@ -82,14 +82,15 @@ if (point.images === null) {
     <yandex-map-default-marker
       v-model="defaultMarker"
       :settings="{
-        coordinates: [37.617644, 55.755819],
+        coordinates: [44.746292,48.797957],
         title: `Долгота: ${defaultMarker?.coordinates[0].toFixed(2)}<br>Широта: ${defaultMarker?.coordinates[1].toFixed(2)}`,
         draggable: true,
         onDragMove,
         onClick(event, mapEvent) {
           console.log(defaultMarker?.coordinates);
         },
-        color: 'green'
+        color: 'green',
+
       }"
     />
 

@@ -2,7 +2,7 @@
 const route = useRoute()
 const { params } = useRoute()
 const CityId = params.id as string
-const { authenticateProvider, fetchUser } = useStrapiAuth()
+const { authenticateProvider, fetchUser, logout } = useStrapiAuth()
 
 // Обрабатываем callback от Google
 onMounted(async () => {

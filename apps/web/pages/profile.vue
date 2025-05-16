@@ -1,18 +1,45 @@
 <script setup lang="ts">
 import { getData, setData } from 'nuxt-storage/local-storage';
-import BlockClothes from '~/components/BlockClothes.vue';
-import SelectClothes from '~/components/BlockClothes.vue';
 
-const { fetchUser } = useStrapiAuth()
+
+const { fetchUser,logout } = useStrapiAuth()
 const user = await fetchUser()
 const { find, findOne } = useStrapi()
+const userId = user.value?.documentId
+const maps = await find('maps',{
+    populate:'*'
+})
 
+
+const mapComplite = ref(0)
+
+for (const map of maps.data) {
+  const mapData = await findOne('maps', map.documentId, { populate: 'locations' })
+  const progresses = await find('user-location-progresses', {
+    filters: {
+      users_permissions_user: { documentId: userId },
+      location: { map: { documentId: map.documentId } }
+    }
+  })
+  if (Math.round((progresses.data.length / mapData.data.locations.length) * 100) === 100){
+      mapComplite.value++
+  }
+}
+const map = await find('user-map-stories',{filters:{
+    users_permissions_user: { documentId: { $eq: userId } }
+}})
+const locationComlite = await find('user-location-progresses',{filters:{
+    users_permissions_user: { documentId: { $eq: userId } }
+}})
+const achievementsComplite = await find('user-achievements',{filters:{
+    users_permissions_user: { documentId: { $eq: userId } }
+}})
 const name = user.value?.username!
 const stats = [
-  { number: '120', label: 'ЗАДАНИЙ СОБРАНО' },
-  { number: '9', label: 'КАРТ ОТПРАВЛЕНО' },
-  { number: '56', label: 'ДОСТИЖЕНИЙ СОБРАНО' },
-  { number: '4K', label: 'КАРТ ПРОЙДЕНО' }
+  { number: locationComlite.data.length, label: 'локаций пройдено' },
+  { number: map.data.length, label: 'карт опробовано' },
+  { number: achievementsComplite.data.length, label: 'достижений собрано' },
+  { number: mapComplite.value, label: 'карт пройдено' }
 ]
 
 // const achievements = [
@@ -107,7 +134,7 @@ setData('cityId', city, 1 , 'd')
                     
                         </div>
                     </div>
-                <ButtonAction class="exit">
+                <ButtonAction class="exit" @click="() => {logout(), navigateTo('/')}">
                     выход из профиля
                 </ButtonAction>
         </div>
