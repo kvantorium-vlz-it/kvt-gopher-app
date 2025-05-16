@@ -99,12 +99,12 @@ setData('cityId', city, 1 , 'd')
 
             <div class="inv-area">
                 <div class="achievements-header">
-                    <TwentyText>чушпаньё</TwentyText>
+                    <TwentyText>твой суслик</TwentyText>
                 </div>
                 <div class="ch-area">
                     <img src="../public/images/suslo.svg" class="p">
                     <div class="inventar-area">
-                        <Block class="g"></Block>
+                        <Block class="e"><div class="ssss"><Icon class="wwww" name="tdesign:close"></Icon></div></Block>
                         <Block class="g"></Block>
                         <Block class="g"></Block>
                         <Block class="g"></Block>
@@ -142,8 +142,21 @@ setData('cityId', city, 1 , 'd')
 </template>
 
 <style scoped>
+
+.ssss{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
 .exit{
     width: 100%;
+}
+.e{
+    background-color: #EFEFEF;
+    width: 57px;
+    aspect-ratio: 1;
+    color: #00000050;
+    border: 1px solid #00000050;
 }
 .p{
     padding-left: 24px;
@@ -154,7 +167,9 @@ setData('cityId', city, 1 , 'd')
     gap: 16px;
 }
 .g{
-    background-color: rgba(217, 217, 217, 1);
+
+    background-color: #EFEFEF;
+
     width: 57px;
     aspect-ratio: 1;
 }
