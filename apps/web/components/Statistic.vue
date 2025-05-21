@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import TenText from './text/TenText.vue';
 
-const props = defineProps<{
+defineProps<{
+  /**
+   * цифра для статистики
+   */
   title: string
+  /**
+   * описание для статистики
+   */
   description: string
 }>()
 </script>

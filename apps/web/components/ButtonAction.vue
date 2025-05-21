@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const props = defineProps({
+  /**
+   * выключена ли кнопка
+   * @default false
+   */
     disabled: {
     default: false
   },

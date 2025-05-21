@@ -1,10 +1,22 @@
 <script setup lang="ts">
 defineProps<{
+
+    /**
+     * id записи карты в базе данных
+     */
   id: string
+    /**
+     * называние карты
+     */
   title: string
+    /**
+     * описание карты
+     */
   description: string
+    /**
+     * процент прохождения по карте
+     */
   percent: number
-  image?: string  
 }>()
 </script>
 <template>
@@ -23,17 +35,12 @@ defineProps<{
             </div>
         </div>
         <ButtonAction class="white" @click="async() => {await navigateTo(`map/${id}`)}">вперёд!</ButtonAction>
-        <!-- <img src="../../public/images/52.svg" class="image-plot"> -->
 
     </Block>
     
 
 </template>
 <style scoped>
-/* .image-plot{
-    position: absolute;
-    z-index: -1;
-} */
 .plot-area-card {
   isolation: isolate;
   border-radius: 16px;

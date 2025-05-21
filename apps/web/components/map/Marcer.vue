@@ -5,17 +5,47 @@ import { YandexMapDefaultMarker } from 'vue-yandex-maps';
 
 const defaultMarker = shallowRef<YMapDefaultMarker | null>(null);
 
+/**
+ * Пропсы для маркера
+ */
 interface MarkerProps {
+  /**
+   * Координаты маркера
+   */
   coords: {
+    /**
+     * Широта
+     */
     lon: number
+    /**
+     * Долгота
+     */
     lat: number
   }
+  /**
+   * Мои координаты
+   */
   mi: {
+      /**
+     * Широта
+     */
     lon: number
+     /**
+     * Долгота
+     */
     lat: number
   }
+  /**
+   * название точки
+   */
   name?: string
+  /**
+   * описание точки
+   */
   description?: string
+  /**
+   * картинки точки
+   */
   images?: string[]
 }
 

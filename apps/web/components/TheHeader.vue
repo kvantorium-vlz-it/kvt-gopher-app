@@ -3,6 +3,9 @@ import TenText from './text/TenText.vue';
 import TwentyText from './text/TwentyText.vue';
 
 defineProps<{
+    /**
+     * имя пользователя
+     */
     username: string
 }>()
 

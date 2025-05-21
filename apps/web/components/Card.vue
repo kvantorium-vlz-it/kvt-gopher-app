@@ -1,13 +1,21 @@
 <script setup lang="ts">
 const props = defineProps<{
+    /**
+     * id ачивки в базе данных
+     */
   id: string
+  /**
+   * заголовок для достижения
+   */
   title: string
+  /**
+   * описание для достижения
+   */
   description: string
-  image?: string
-  color: string;
-  active: boolean;
-
-  
+    /**
+     *собрано ли достижение 
+     */
+  active: boolean
 }>()
 const { find, findOne, update } = useStrapi()
 const IsActive = ref(!props.active)
@@ -33,7 +41,6 @@ async function up() {
             <span v-if="!IsActive">собрано</span>
             <span v-if="IsActive">собрать!</span>
         </ButtonAction>
-        <!-- <img src="../public/images/Semen.png" class="city-area-card-background"> -->
     </Block>
     
 

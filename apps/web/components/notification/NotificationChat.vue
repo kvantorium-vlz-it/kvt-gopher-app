@@ -70,19 +70,36 @@ import {
 } from 'radix-vue';
 
 const props = defineProps({
+  /**
+   * название блока уведомлений
+   * @default "Уведомления"
+   */
   title: {
     type: String,
     default: 'Уведомления'
   },
+  /**
+   * масиив уведомлений
+   * @default []
+   */
+  
   notifications: {
     type: Array,
     required: true,
     default: () => []
   },
+  /**
+   * показывать ли статистику по непрочитанным сообщения
+   * @default true
+   */
   showStats: {
     type: Boolean,
     default: true
   },
+  /**
+   * количества непрочитанных сообщений
+   * @default 0
+   */
   unreadCount: {
     type: Number,
     default: 0

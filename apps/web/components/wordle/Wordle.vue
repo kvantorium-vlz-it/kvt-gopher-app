@@ -13,20 +13,18 @@
     </div>
   </template>
   
-  <script setup lang="ts">
+<script setup lang="ts">
 const emit = defineEmits(['gameOver'])
 const props = defineProps<{
+  /**
+   * загадоное слово
+   */
     word: string
   }>()
 
   const word = ref(props.word)
   const gameStarted = ref(false)
-  
-  // const startGame = () => {
-  //   if (word.value) {
-  //     gameStarted.value = true
-  //   }
-  // }
+
   </script>
   
   <style>

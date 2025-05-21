@@ -68,15 +68,26 @@ import {
 import { ref, computed } from 'vue'
 
 const props = defineProps({
+  /**
+   * поле выбора 
+   * @default "Выберите город..."
+   */
   placeholder: {
     type: String,
     default: 'Выберите город...'
   },
+  /**
+   * массив вариантов
+   * @default []
+   */
   cities: {
     type: Array,
     required: true,
     default: () => []
   },
+  /**
+   * выбранный гвариант
+   */
   value: {
     type: String,
     required: false

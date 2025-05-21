@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const props = defineProps<{
+  /**
+   * загаданое слово
+   */
   word: string
 }>()
 

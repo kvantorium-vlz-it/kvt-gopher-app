@@ -55,26 +55,44 @@
 <script setup>
 
 const props = defineProps({
+  /**
+   * открывался ли чат до этого
+   */
   isOpen: {
       type: Boolean,
       required: true
   },
+  /**
+   * обьект сообщений чата
+   */
   story: {
       type: Object,
       required: true
   },
+  /**
+   * массив говорящих
+   */
   speakers: {
       type: Array,
       required: true
   },
+  /**
+   * от чьего лици ведётся диалог
+   */
   currentUser: {
       type: String,
       required: true
   },
+  /**
+   * был ли просмотрен диалог
+   */
   hasSeenDialog:{
       type: Boolean,
       required: true
   },
+  /**
+   * id записи истории в базе данных
+   */
   mapStoryId:{
       type: String,
       required:true

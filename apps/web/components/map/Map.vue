@@ -11,11 +11,20 @@ import {
 import type { YMapDefaultMarker } from '@yandex/ymaps3-types/packages/markers';
 
 interface Point {
+     /**
+     * Долгота
+     */
   lat: number,
+       /**
+     * Широта
+     */
   lon: number,
 }
 
 const props = defineProps<{
+  /**
+   * точки
+   */
   points: Point[]
 }>();
 

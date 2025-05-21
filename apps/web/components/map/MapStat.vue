@@ -7,7 +7,13 @@
   
   <script setup lang="ts">
   defineProps<{
+    /**
+     * название статики
+     */
     text: string,
+    /**
+     * количество в статистике
+     */
     number: number,
   
   }>()

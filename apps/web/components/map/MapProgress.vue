@@ -4,6 +4,9 @@ import { ProgressIndicator, ProgressRoot } from 'radix-vue'
 
 const progressValue = ref(0)
 const props = defineProps<{
+  /**
+   * прогресс по карте
+   */
     progress: number,
     
   

@@ -3,6 +3,9 @@ import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 
 const props = defineProps<{
+  /**
+   * id записи города в базе данных
+   */
   id: string
 }>()
 

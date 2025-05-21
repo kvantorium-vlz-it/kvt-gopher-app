@@ -20,22 +20,39 @@
 
 <script setup>
 defineProps({
+  /**
+   * кто говорит
+   */
   author: {
     type: String,
     required: true
   },
+  /**
+   * текст сообщения
+   */
   message: {
     type: String,
     required: true
   },
+  /**
+   * является ли он тем от чьего лица мы общаемся
+   * @default false
+   */
   isCurrentUser: {
     type: Boolean,
     default: false
   },
+  /**
+   * аватар говорящего
+   */
   avatar: {
     type: String,
     required: true
   },
+  /**
+   * url картинки прикреплённой к сообщению
+   * @default ""
+   */
   image: {
     type: String,
     default: ''

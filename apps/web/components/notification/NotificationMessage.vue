@@ -42,43 +42,64 @@
 
 <script setup lang="ts">
 import { format } from 'date-fns';
-import type { NotificationDetails, NotificationType, NotificationPriority, NotificationCategory } from '~/types/notifications';
 
 const props = defineProps({
-  id: {
-    type: [Number, String],
-    required: true
-  },
+  /**
+   * тип уведомления
+   */
   type: {
-    type: String as () => NotificationType,
+    type: String,
     required: true,
     validator: (value: string) => ['info', 'success', 'warning', 'error'].includes(value)
   },
+  /**
+   * содержания уведомления
+   */
   text: {
     type: String,
     required: true
   },
+  /**
+   * время уведомления
+   */
   updatedAt: {
     type: Date,
     required: true
   },
+  /**
+   * приорететность уведомления
+   */
   priority: {
-    type: String as () => NotificationPriority,
+    type: String,
     required: true,
     validator: (value: string) => ['low', 'medium', 'high', 'critical'].includes(value)
   },
+  /**
+   * прочитано ли уведомление
+   * @default false
+   */
   read: {
     type: Boolean,
     default: false
   },
+  /**
+   * категория уведомления
+   */
   category: {
-    type: String as () => NotificationCategory,
+    type: String,
     required: true
   },
+  /**
+   * доп информация о уведемлении
+   * @default null
+   */
   details: {
-    type: Object as () => NotificationDetails,
+    type: Object,
     default: null
   },
+  /**
+   * url картинки уведомления
+   */
   iconUrl: {
     type: String,
     required: true
@@ -98,7 +119,7 @@ const formattedDate = computed(() => {
   return format(new Date(props.updatedAt), 'HH:mm, d MMM');
 });
 
-const translateCategory = (category: NotificationCategory) => {
+const translateCategory = (category: any) => {
   const categories = {
     system: 'Система',
     profile: 'Профиль',
@@ -109,7 +130,7 @@ const translateCategory = (category: NotificationCategory) => {
   return categories[category] || category;
 };
 
-const translatePriority = (priority: NotificationPriority) => {
+const translatePriority = (priority: any) => {
   const priorities = {
     low: 'Низкий',
     medium: 'Средний',
@@ -157,8 +178,7 @@ const translatePriority = (priority: NotificationPriority) => {
   position: relative;
   max-width: 90%;
   margin-left: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05),
-              0 4px 16px rgba(0, 0, 0, 0.025);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05),0 4px 16px rgba(0, 0, 0, 0.025);
   border: 1px solid rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
 }
@@ -175,8 +195,7 @@ const translatePriority = (priority: NotificationPriority) => {
 }
 
 .message:hover .message-content {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08),
-              0 8px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08),0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .message.info .message-content { border-left: 4px solid #3b82f6; }
